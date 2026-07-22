@@ -7,23 +7,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #0f1420;
-            --panel: #161c2d;
-            --sidebar: #111827;
-            --border: #1e2d45;
-            --text: #e8edf5;
-            --muted: #7a8ba8;
+            --bg: #f0f4f8;
+            --panel: #ffffff;
+            --sidebar: #1a3c6e;
+            --sidebar-hover: #2a5298;
+            --sidebar-active: #ffffff;
+            --border: #dde3ec;
+            --text: #1e2d3d;
+            --muted: #6b7a8d;
             --accent: #1a3c6e;
-            --accent-light: #2a5298;
-            --vert: #1b5e20;
-            --vert-light: #2e7d32;
+            --vert: #2e7d32;
+            --vert-bg: #e8f5e9;
             --orange: #e65100;
-            --radius: 10px;
+            --orange-bg: #fff3e0;
+            --bleu-bg: #e8f0fb;
+            --radius: 12px;
             --font: 'Inter', -apple-system, sans-serif;
         }
-
         * { box-sizing: border-box; margin: 0; padding: 0; }
-
         body {
             font-family: var(--font);
             background: var(--bg);
@@ -34,68 +35,55 @@
             min-height: 100vh;
             padding: 20px;
         }
-
         .modal {
             background: var(--panel);
             border: 1px solid var(--border);
             border-radius: var(--radius);
             width: 100%;
-            max-width: 960px;
-            height: 620px;
+            max-width: 980px;
+            height: 660px;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+            box-shadow: 0 8px 32px rgba(26,60,110,0.12);
             overflow: hidden;
         }
-
         .modal-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 18px 24px;
+            padding: 18px 28px;
             border-bottom: 1px solid var(--border);
             background: var(--accent);
         }
-
-        .modal-header h2 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            letter-spacing: 0.02em;
-            color: #fff;
-        }
-
-        .modal-header span {
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.6);
-            font-weight: 400;
-        }
-
-        .modal-body {
-            display: flex;
-            flex: 1;
-            overflow: hidden;
-        }
-
+        .modal-header h2 { font-size: 1.1rem; font-weight: 700; color: #fff; letter-spacing: 0.02em; }
+        .modal-header span { font-size: 0.8rem; color: rgba(255,255,255,0.65); }
+        .modal-body { display: flex; flex: 1; overflow: hidden; }
         .sidebar {
-            width: 200px;
+            width: 210px;
             background: var(--sidebar);
-            border-right: 1px solid var(--border);
-            padding: 12px 6px;
+            padding: 14px 8px;
             display: flex;
             flex-direction: column;
-            gap: 2px;
+            gap: 3px;
             overflow-y: auto;
         }
-
+        .sidebar-section {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: rgba(255,255,255,0.35);
+            padding: 10px 12px 4px;
+        }
         .tab-btn {
             background: none;
             border: none;
-            color: var(--muted);
+            color: rgba(255,255,255,0.7);
             text-align: left;
-            padding: 9px 14px;
+            padding: 9px 12px;
             font-size: 0.85rem;
             font-weight: 500;
-            border-radius: 7px;
+            border-radius: 8px;
             cursor: pointer;
             transition: all 0.15s;
             display: flex;
@@ -103,174 +91,184 @@
             gap: 8px;
             font-family: var(--font);
         }
-
-        .tab-btn:hover {
-            color: var(--text);
-            background: rgba(255,255,255,0.04);
-        }
-
-        .tab-btn.active {
-            color: #fff;
-            background: var(--accent);
-        }
-
+        .tab-btn:hover { color: #fff; background: rgba(255,255,255,0.1); }
+        .tab-btn.active { color: var(--accent); background: #fff; font-weight: 600; }
         .tab-btn .num {
-            font-size: 0.7rem;
-            color: var(--muted);
-            min-width: 16px;
-        }
-
-        .tab-btn.active .num {
+            font-size: 0.65rem;
+            background: rgba(255,255,255,0.15);
             color: rgba(255,255,255,0.6);
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
         }
-
-        .content-area {
-            flex: 1;
-            padding: 28px 32px;
-            overflow-y: auto;
-        }
-
+        .tab-btn.active .num { background: var(--bleu-bg); color: var(--accent); }
+        .content-area { flex: 1; padding: 28px 36px; overflow-y: auto; background: #fff; }
         .tab-content { display: none; animation: fi 0.2s ease; }
         .tab-content.active { display: block; }
-
-        @keyframes fi {
-            from { opacity: 0; transform: translateY(3px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .content-area h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 6px;
-            color: #fff;
-        }
-
-        .content-area .subtitle {
-            color: var(--muted);
+        @keyframes fi { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+        h3 { font-size: 1.2rem; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+        .divider { height: 3px; background: linear-gradient(to right, var(--accent), transparent); border-radius: 2px; margin-bottom: 16px; width: 60px; }
+        p { font-size: 0.875rem; line-height: 1.7; margin-bottom: 10px; color: var(--text); }
+        ul { padding-left: 18px; margin-bottom: 14px; }
+        li { font-size: 0.875rem; line-height: 1.7; margin-bottom: 5px; color: var(--text); }
+        b { color: var(--accent); }
+        .alert {
+            border-left: 4px solid;
+            padding: 10px 14px;
+            border-radius: 0 8px 8px 0;
             font-size: 0.85rem;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-
-        .bloc {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 16px;
+            line-height: 1.6;
             margin-bottom: 12px;
         }
-
+        .alert.bleu { border-color: var(--accent); background: var(--bleu-bg); color: #1a3c6e; }
+        .alert.vert { border-color: var(--vert); background: var(--vert-bg); color: #1b5e20; }
+        .alert.orange { border-color: var(--orange); background: var(--orange-bg); color: #bf360c; }
+        .bloc {
+            background: #f8faff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin-bottom: 14px;
+        }
         .bloc-titre {
-            font-size: 0.8rem;
+            font-size: 0.72rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            color: var(--muted);
+            color: var(--accent);
             margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--border);
         }
-
         .item {
             display: flex;
             gap: 10px;
-            padding: 7px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
+            padding: 6px 0;
+            border-bottom: 1px solid #eef1f6;
             font-size: 0.875rem;
             line-height: 1.5;
+            align-items: flex-start;
         }
-
         .item:last-child { border-bottom: none; }
-
-        .item .col-label {
+        .col-label {
             background: var(--accent);
             color: #fff;
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 700;
             padding: 2px 7px;
             border-radius: 4px;
             min-width: 36px;
             text-align: center;
-            height: fit-content;
+            flex-shrink: 0;
             margin-top: 2px;
         }
-
-        .item .col-desc {
-            color: var(--text);
-            flex: 1;
-        }
-
-        .item .col-desc b { color: #7eb3ff; }
-
-        .alert {
-            border-left: 3px solid;
-            padding: 10px 14px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            line-height: 1.5;
-            margin-bottom: 10px;
-        }
-
-        .alert.bleu { border-color: #2a5298; background: rgba(42,82,152,0.12); }
-        .alert.vert { border-color: #2e7d32; background: rgba(46,125,50,0.12); }
-        .alert.orange { border-color: #e65100; background: rgba(230,81,0,0.12); }
-
+        .col-label.vert { background: var(--vert); }
+        .col-label.orange { background: var(--orange); }
+        .col-desc { color: var(--text); flex: 1; }
         .badge {
-            display: inline-block;
-            padding: 2px 8px;
-            border-radius: 4px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 10px;
+            border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 600;
-            margin-right: 4px;
+            margin-right: 6px;
         }
-
-        .badge.vert { background: rgba(46,125,50,0.25); color: #81c784; }
-        .badge.orange { background: rgba(230,81,0,0.25); color: #ffb74d; }
-        .badge.rouge { background: rgba(198,40,40,0.25); color: #ef9a9a; }
-        .badge.bleu { background: rgba(42,82,152,0.25); color: #90caf9; }
+        .badge.vert { background: #e8f5e9; color: #2e7d32; }
+        .badge.orange { background: #fff3e0; color: #e65100; }
+        .badge.rouge { background: #ffebee; color: #c62828; }
+        .badge.bleu { background: #e8f0fb; color: #1a3c6e; }
+        .astuce {
+            background: linear-gradient(135deg, #e8f0fb, #f0f4ff);
+            border: 1px solid #c5d4f0;
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: var(--accent);
+        }
+        .astuce strong { display: block; margin-bottom: 4px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
     </style>
 </head>
 <body>
 <div class="modal">
     <div class="modal-header">
-        <h2>📱 Contrathèque — Aide par onglet</h2>
-        <span>Pack v3</span>
+        <h2>📱 Contrathèque — Aide &amp; Conseils</h2>
+        <span>Pack v3 — 2026</span>
     </div>
-
     <div class="modal-body">
         <nav class="sidebar">
+            <div class="sidebar-section">Général</div>
             <button class="tab-btn active" data-tab="essentiel"><span class="num">1</span> L'Essentiel</button>
-            <button class="tab-btn" data-tab="contrats"><span class="num">2</span> Contrats</button>
-            <button class="tab-btn" data-tab="suivida"><span class="num">3</span> Suivi DA</button>
-            <button class="tab-btn" data-tab="recherche"><span class="num">4</span> Recherche</button>
-            <button class="tab-btn" data-tab="donnees"><span class="num">5</span> Données</button>
-            <button class="tab-btn" data-tab="are"><span class="num">6</span> ARE</button>
-            <button class="tab-btn" data-tab="tdb"><span class="num">7</span> Tableau de bord</button>
-            <button class="tab-btn" data-tab="stats"><span class="num">8</span> Stats mensuelles</button>
-            <button class="tab-btn" data-tab="frais"><span class="num">9</span> Frais réels</button>
-            <button class="tab-btn" data-tab="aide"><span class="num">10</span> Aide & Liens</button>
+            <button class="tab-btn" data-tab="conseils"><span class="num">2</span> Conseils &amp; Astuces</button>
+            <div class="sidebar-section">Onglets</div>
+            <button class="tab-btn" data-tab="contrats"><span class="num">3</span> Contrats</button>
+            <button class="tab-btn" data-tab="suivida"><span class="num">4</span> Suivi DA</button>
+            <button class="tab-btn" data-tab="recherche"><span class="num">5</span> Recherche</button>
+            <button class="tab-btn" data-tab="donnees"><span class="num">6</span> Données</button>
+            <button class="tab-btn" data-tab="are"><span class="num">7</span> ARE</button>
+            <button class="tab-btn" data-tab="tdb"><span class="num">8</span> Tableau de bord</button>
+            <button class="tab-btn" data-tab="stats"><span class="num">9</span> Stats mensuelles</button>
+            <button class="tab-btn" data-tab="frais"><span class="num">10</span> Frais réels</button>
+            <button class="tab-btn" data-tab="aide"><span class="num">11</span> Aide &amp; Liens</button>
         </nav>
 
         <div class="content-area">
 
             <!-- 1. L'ESSENTIEL -->
             <div class="tab-content active" id="essentiel">
-                <h3>📱 L'Essentiel</h3>
-                <p class="subtitle">Vue résumée de votre activité, optimisée pour une consultation rapide sur smartphone.</p>
-                <div class="alert bleu">🔒 Rien à saisir dans cet onglet — tout se calcule automatiquement.</div>
-                <div class="bloc">
-                    <div class="bloc-titre">Ce que vous y trouverez</div>
-                    <div class="item"><span class="col-label">📅</span><span class="col-desc">Prochain contrat avec DA et studio — se met à jour après 19h pour passer au lendemain</span></div>
-                    <div class="item"><span class="col-label">📊</span><span class="col-desc">Cachets, brut, net et paiements en attente du mois en cours</span></div>
-                    <div class="item"><span class="col-label">💰</span><span class="col-desc">Situation ARE : heures validées, éligibilité, AJ nette, estimation mensuelle</span></div>
-                    <div class="item"><span class="col-label">📈</span><span class="col-desc">Totaux de l'année en cours</span></div>
-                    <div class="item"><span class="col-label">👥</span><span class="col-desc">Nombre de DA à relancer (> 3 mois sans contrat ni contact)</span></div>
-                </div>
-                <div class="alert orange">ℹ️ <b>Estim. Allocs.</b> — dépend du mois saisi en B5 de l'onglet ARE. Pour le mois en cours, saisir le 1er du mois en ARE!B5.</div>
+                <h3>📱 L'ESSENTIEL</h3>
+                <div class="divider"></div>
+                <p>Vue résumée de votre activité, optimisée pour une consultation rapide sur mobile.</p>
+                <p>Vous y trouverez en un coup d'œil :</p>
+                <ul>
+                    <li>📅 Votre prochain contrat</li>
+                    <li>📊 Les chiffres du mois en cours</li>
+                    <li>💰 Votre situation ARE</li>
+                    <li>📈 Les totaux de l'année</li>
+                    <li>👥 Les DA à relancer</li>
+                </ul>
+                <div class="alert orange">ℹ️ <b>Estim. Allocs.</b> — dépend du mois saisi en B5 de l'onglet ARE. Pour voir le mois en cours, saisissez le 1er du mois en ARE!B5.</div>
+                <div class="alert bleu">🔒 <b>Rien à saisir dans cet onglet</b> — tout se calcule automatiquement.</div>
             </div>
 
-            <!-- 2. CONTRATS -->
+            <!-- 2. CONSEILS & ASTUCES -->
+            <div class="tab-content" id="conseils">
+                <h3>💡 Conseils &amp; Astuces</h3>
+                <div class="divider"></div>
+                <div class="bloc">
+                    <div class="bloc-titre">⚠️ Règles essentielles</div>
+                    <div class="item"><span class="col-label orange">!</span><span class="col-desc"><b>Ne jamais supprimer de colonnes ou de lignes</b> — masquez-les si vous voulez les cacher. Les calculs fonctionnent même sur les lignes et colonnes masquées.</span></div>
+                    <div class="item"><span class="col-label orange">!</span><span class="col-desc"><b>Ne pas renommer les onglets</b> — les formules et le script en dépendent.</span></div>
+                    <div class="item"><span class="col-label orange">!</span><span class="col-desc"><b>Ne jamais coller avec Ctrl+V</b> — utilisez toujours <b>Ctrl+Shift+V</b> (valeurs uniquement) pour éviter d'écraser les formules.</span></div>
+                </div>
+                <div class="bloc">
+                    <div class="bloc-titre">🧭 Navigation</div>
+                    <div class="item"><span class="col-label">↓</span><span class="col-desc"><b>Ctrl+Fin</b> — aller directement à la dernière ligne saisie dans CONTRATS</span></div>
+                    <div class="item"><span class="col-label">🔍</span><span class="col-desc">Utilisez l'onglet RECHERCHE plutôt que Ctrl+F pour retrouver un contrat</span></div>
+                    <div class="item"><span class="col-label">📱</span><span class="col-desc">Consultez l'onglet L'ESSENTIEL depuis votre smartphone pour un résumé rapide</span></div>
+                </div>
+                <div class="bloc">
+                    <div class="bloc-titre">✅ Bonnes pratiques</div>
+                    <div class="item"><span class="col-label vert">✓</span><span class="col-desc">Double-clic sur les colonnes <b>A</b> (date contrat) et <b>AG</b> (date paiement) pour ouvrir le calendrier</span></div>
+                    <div class="item"><span class="col-label vert">✓</span><span class="col-desc">Ne pas laisser de lignes vides entre les contrats dans CONTRATS</span></div>
+                    <div class="item"><span class="col-label vert">✓</span><span class="col-desc">Ajouter les DA, studios et titres dans DONNÉES <b>avant</b> de les utiliser dans CONTRATS</span></div>
+                    <div class="item"><span class="col-label vert">✓</span><span class="col-desc">Faire une copie de sauvegarde mensuelle du fichier</span></div>
+                </div>
+                <div class="alert vert">✅ Si une formule disparaît par erreur, <b>pas de panique</b> — elle se remet en place automatiquement à la prochaine saisie dans la cellule.</div>
+            </div>
+
+            <!-- 3. CONTRATS -->
             <div class="tab-content" id="contrats">
-                <h3>💼 Contrats</h3>
-                <p class="subtitle">Le cœur du fichier. <b>Une ligne = un contrat.</b> Remplissez uniquement les cases vertes.</p>
+                <h3>📋 L'onglet CONTRATS</h3>
+                <div class="divider"></div>
+                <p>C'est ici que vous saisissez tous vos contrats. <b>Une ligne = un contrat.</b></p>
                 <div class="bloc">
                     <div class="bloc-titre">Cases vertes — à remplir</div>
                     <div class="item"><span class="col-label">A</span><span class="col-desc">Date du contrat (double-clic 🗓)</span></div>
@@ -284,41 +282,43 @@
                     <div class="item"><span class="col-label">AG</span><span class="col-desc">Date de paiement (double-clic 🗓)</span></div>
                     <div class="item"><span class="col-label">AH</span><span class="col-desc">Récap mensuel automatique — survolez pour voir le détail</span></div>
                 </div>
-                <div class="alert orange">🔒 Les colonnes non vertes se calculent seules et se réparent automatiquement si modifiées par erreur.</div>
-                <div class="alert bleu">AB affiche "=>" ? Normal pour Jeu Vidéo, Théâtre, Pub... Saisissez le salaire manuellement en AC.</div>
+                <div class="alert bleu">🔒 Les colonnes non vertes se calculent seules et se réparent automatiquement si modifiées par erreur.</div>
+                <div class="alert orange">AB affiche "=>" ? Normal pour Jeu Vidéo, Théâtre, Pub... Saisissez le salaire manuellement en AC.</div>
             </div>
 
-            <!-- 3. SUIVI DA -->
-           <div class="tab-content" id="suivida">
-    <h3>👥 Suivi DA</h3>
-    <p>Vue automatique de votre relation avec chaque DA.</p>
-    <p><b>Colonnes à remplir :</b></p>
-    <ul>
-        <li><b>E</b> (verte) — Date à laquelle vous avez croisé ce DA</li>
-        <li><b>F</b> — Case à cocher : DA plus en activité (exclu des DA à relancer)</li>
-    </ul>
-    <p><b>Code couleur automatique :</b></p>
-    <ul>
-        <li>🟢 <b>Vert</b> — moins de 2 mois, tout va bien</li>
-        <li>🟠 <b>Orange</b> — entre 2 et 3 mois, à surveiller</li>
-        <li>🔴 <b>Rouge</b> — plus de 3 mois, à relancer !</li>
-    </ul>
-    <p><b>⚠️ Bon usage — à lire avant tout :</b></p>
-    <ul>
-        <li>Cet outil est une aide personnelle à la gestion de votre réseau professionnel — pas un outil de démarchage systématique.</li>
-        <li>Il n'y a <b>aucune règle</b> imposée. Chaque comédien gère sa relation avec les DA à sa façon.</li>
-        <li>La pratique communément tolérée est un contact tous les <b>2 à 3 mois</b> — un simple bonjour en studio suffit, et vous évitera de saturer le DA avec un texto de plus dans sa journée.</li>
-        <li>Pensez-y : pour vous, c'est un texto envoyé. Pour un DA actif, c'est l'un des <b>nombreux messages reçus dans la journée</b>. Chaque contact compte — inutile de multiplier les relances.</li>
-        <li>💡 Astuce : profitez d'une <b>actualité artistique à partager</b> (une diffusion, un projet, une info du milieu...) — le contact sera plus naturel et moins perçu comme une démarche de recherche de travail.</li>
-        <li>Certains DA apprécient les contacts réguliers. D'autres moins. <b>Adaptez-vous à chaque DA.</b></li>
-        <li>Un DA en rouge ne signifie pas qu'il <b>faut</b> rappeler — il signifie simplement que le temps passe.</li>
-    </ul>
-</div>
+            <!-- 4. SUIVI DA -->
+            <div class="tab-content" id="suivida">
+                <h3>👥 L'onglet SUIVI DA</h3>
+                <div class="divider"></div>
+                <p>Vue automatique de votre relation avec chaque DA.</p>
+                <div class="bloc">
+                    <div class="bloc-titre">Colonnes à remplir</div>
+                    <div class="item"><span class="col-label vert">E</span><span class="col-desc">Date à laquelle vous avez croisé ce DA (dernier contact)</span></div>
+                    <div class="item"><span class="col-label">F</span><span class="col-desc">Case à cocher ✓ — DA plus en activité ou plus suivi (exclu des DA à relancer)</span></div>
+                </div>
+                <div class="bloc">
+                    <div class="bloc-titre">Code couleur automatique (colonne D)</div>
+                    <div class="item"><span class="badge vert">🟢 Vert</span><span class="col-desc">Moins de 2 mois — tout va bien</span></div>
+                    <div class="item"><span class="badge orange">🟠 Orange</span><span class="col-desc">Entre 2 et 3 mois — à surveiller</span></div>
+                    <div class="item"><span class="badge rouge">🔴 Rouge</span><span class="col-desc">Plus de 3 mois — à relancer, ou non, selon votre jugement et les préférences du DA</span></div>
+                </div>
+                <div class="bloc">
+                    <div class="bloc-titre">⚠️ Bon usage — à lire avant tout</div>
+                    <div class="item"><span class="col-label orange">!</span><span class="col-desc">Cet outil est une aide personnelle à la gestion de votre réseau — pas un outil de démarchage systématique.</span></div>
+                    <div class="item"><span class="col-label orange">!</span><span class="col-desc">Il n'y a <b>aucune règle</b> imposée. Chaque comédien gère sa relation avec les DA à sa façon.</span></div>
+                    <div class="item"><span class="col-label">💬</span><span class="col-desc">La pratique communément tolérée : un contact tous les <b>2 à 3 mois</b> — un simple bonjour en studio suffit, et vous évitera de saturer le DA avec un texto de plus dans sa journée.</span></div>
+                    <div class="item"><span class="col-label">📱</span><span class="col-desc">Pensez-y : pour vous, c'est un texto envoyé. Pour un DA actif, c'est l'un des <b>nombreux messages reçus dans la journée</b>. Chaque contact compte — inutile de multiplier les relances.</span></div>
+                    <div class="item"><span class="col-label vert">💡</span><span class="col-desc">Astuce : profitez d'une <b>actualité artistique à partager</b> (une diffusion, un projet, une info du milieu...) — le contact sera plus naturel et moins perçu comme une démarche de recherche de travail.</span></div>
+                    <div class="item"><span class="col-label">👥</span><span class="col-desc">Certains DA apprécient les contacts réguliers. D'autres moins. <b>Adaptez-vous à chaque DA.</b></span></div>
+                    <div class="item"><span class="col-label">🔴</span><span class="col-desc">Un DA en rouge ne signifie pas qu'il <b>faut</b> rappeler — il signifie simplement que le temps passe.</span></div>
+                </div>
+            </div>
 
-            <!-- 4. RECHERCHE -->
+            <!-- 5. RECHERCHE -->
             <div class="tab-content" id="recherche">
-                <h3>🔍 Recherche</h3>
-                <p class="subtitle">Retrouvez n'importe quel contrat en quelques secondes.</p>
+                <h3>🔍 L'onglet RECHERCHE</h3>
+                <div class="divider"></div>
+                <p>Parmi tous vos contrats, retrouvez n'importe lequel en quelques secondes.</p>
                 <div class="bloc">
                     <div class="bloc-titre">Zone de saisie — ligne 3</div>
                     <div class="item"><span class="col-label">A3</span><span class="col-desc">Choisissez le critère (DA, Studio, Titre, Genre...)</span></div>
@@ -330,70 +330,76 @@
                 <div class="alert bleu">La cellule <b>J3</b> (fond rosé) affiche le total des montants non encore perçus sur les résultats filtrés.</div>
             </div>
 
-            <!-- 5. DONNÉES -->
+            <!-- 6. DONNÉES -->
             <div class="tab-content" id="donnees">
-                <h3>📈 Données</h3>
-                <p class="subtitle">La base de tout le fichier. Gérez ici vos listes de référence.</p>
+                <h3>📝 L'onglet DONNÉES</h3>
+                <div class="divider"></div>
+                <p>La base de tout le fichier. Gérez ici vos listes de référence.</p>
                 <div class="bloc">
                     <div class="bloc-titre">Colonnes à remplir</div>
-                    <div class="item"><span class="col-label">A</span><span class="col-desc">Vos DA — format NOM Prénom (ex: LEBLANC Juste)</span></div>
-                    <div class="item"><span class="col-label">D</span><span class="col-desc">Les studios et sociétés de production</span></div>
-                    <div class="item"><span class="col-label">G</span><span class="col-desc">Les séries et titres récurrents</span></div>
+                    <div class="item"><span class="col-label vert">A</span><span class="col-desc">Vos DA — format NOM Prénom (ex: LEBLANC Juste)</span></div>
+                    <div class="item"><span class="col-label vert">D</span><span class="col-desc">Les studios et sociétés de production</span></div>
+                    <div class="item"><span class="col-label vert">G</span><span class="col-desc">Les séries et titres récurrents</span></div>
                 </div>
-                <div class="alert orange">⚠️ Ajoutez toujours en bas de liste, sans laisser de ligne vide. Les listes déroulantes se mettent à jour automatiquement.</div>
+                <div class="alert orange">⚠️ Ajoutez toujours en bas de liste, sans laisser de ligne vide.</div>
                 <div class="alert bleu">La zone <b>Profil</b> (colonne C en haut) contient votre nom, année de départ et annexe (8 ou 10).</div>
             </div>
 
-            <!-- 6. ARE -->
+            <!-- 7. ARE -->
             <div class="tab-content" id="are">
-                <h3>💰 ARE — Simulation allocations chômage</h3>
-                <p class="subtitle">Simulation annexe 8 ou 10. Les résultats sont indicatifs et ne remplacent pas le calcul officiel de France Travail.</p>
+                <h3>💰 L'onglet ARE</h3>
+                <div class="divider"></div>
+                <p>Simulation de vos allocations chômage (annexe 8 ou 10).</p>
+                <div class="alert orange">⚠️ Outil de simulation uniquement — les résultats sont indicatifs et ne remplacent pas le calcul officiel de France Travail.</div>
                 <div class="bloc">
                     <div class="bloc-titre">Cellules saisissables</div>
-                    <div class="item"><span class="col-label">B5</span><span class="col-desc">Mois à simuler — saisir le 1er jour du mois (ex: 01/07/2026)</span></div>
-                    <div class="item"><span class="col-label">B14</span><span class="col-desc"><b>FCT manuelle = votre date anniversaire</b> — point de départ des 12 mois (optionnel)</span></div>
-                    <div class="item"><span class="col-label">B22</span><span class="col-desc">ICCP — relevé annuel Congés Spectacles. N'impacte que le 1er mois d'indemnisation.</span></div>
-                    <div class="item"><span class="col-label">B23</span><span class="col-desc">Prime de licenciement au-delà du légal — très rare en doublage, laisser vide si rien reçu.</span></div>
-                    <div class="item"><span class="col-label">B37</span><span class="col-desc">AJ nette connue (optionnel) — depuis votre notification d'admission France Travail.</span></div>
+                    <div class="item"><span class="col-label vert">B5</span><span class="col-desc">Mois à simuler — saisir le 1er jour du mois (ex: 01/07/2026)</span></div>
+                    <div class="item"><span class="col-label vert">B14</span><span class="col-desc"><b>FCT manuelle = votre date anniversaire</b> — point de départ des 12 mois (optionnel)</span></div>
+                    <div class="item"><span class="col-label vert">B22</span><span class="col-desc">ICCP — relevé annuel Congés Spectacles. N'impacte que le 1er mois d'indemnisation.</span></div>
+                    <div class="item"><span class="col-label vert">B23</span><span class="col-desc">Prime de licenciement au-delà du légal — très rare en doublage, laisser vide si rien reçu.</span></div>
+                    <div class="item"><span class="col-label vert">B37</span><span class="col-desc">AJ nette connue (optionnel) — depuis votre notification d'admission France Travail.</span></div>
                 </div>
-                <div class="alert orange">ℹ️ Le SR (Salaire de Référence) est calculé sur les salaires bruts uniquement, hors droits de diffusion — conformément au calcul France Travail. L'AJ estimée peut différer légèrement.</div>
+                <div class="alert bleu">ℹ️ Le SR est calculé sur les salaires bruts uniquement, hors droits de diffusion — conformément au calcul France Travail. L'AJ estimée peut différer légèrement.</div>
             </div>
 
-            <!-- 7. TABLEAU DE BORD -->
+            <!-- 8. TABLEAU DE BORD -->
             <div class="tab-content" id="tdb">
-                <h3>📊 Tableau de bord</h3>
-                <p class="subtitle">Vos statistiques générales en un coup d'œil.</p>
-                <div class="alert bleu">🔒 Rien à saisir dans cet onglet — 100% automatique.</div>
+                <h3>📊 TABLEAU DE BORD</h3>
+                <div class="divider"></div>
+                <p>Vos statistiques générales en un coup d'œil.</p>
+                <div class="alert bleu">🔒 <b>Rien à saisir dans cet onglet</b> — 100% automatique.</div>
                 <div class="bloc">
                     <div class="bloc-titre">Ce que vous y trouverez</div>
                     <div class="item"><span class="col-label">📅</span><span class="col-desc">Salaires par année depuis votre début</span></div>
                     <div class="item"><span class="col-label">👥</span><span class="col-desc">Vos DA les plus fréquents</span></div>
                     <div class="item"><span class="col-label">🎬</span><span class="col-desc">Répartition par genre</span></div>
-                    <div class="item"><span class="col-label">🏢</span><span class="col-desc">Studios ou Prods habituels</span></div>
+                    <div class="item"><span class="col-label">🏢</span><span class="col-desc">Studios habituels</span></div>
                 </div>
             </div>
 
-            <!-- 8. STATS MENSUELLES -->
+            <!-- 9. STATS MENSUELLES -->
             <div class="tab-content" id="stats">
-                <h3>📅 Stats mensuelles</h3>
-                <p class="subtitle">Statistiques mois par mois, année par année.</p>
+                <h3>📅 STATS MENSUELLES</h3>
+                <div class="divider"></div>
+                <p>Statistiques mois par mois, année par année.</p>
                 <div class="bloc">
                     <div class="bloc-titre">Cellules jaunes modifiables — ligne 21</div>
                     <div class="item"><span class="col-label">Studio</span><span class="col-desc">Filtrer les stats par studio</span></div>
                     <div class="item"><span class="col-label">DA</span><span class="col-desc">Filtrer les stats par DA</span></div>
                 </div>
-                <div class="alert bleu">Tout le reste est automatique. Laissez les cellules jaunes vides pour voir les totaux globaux.</div>
+                <div class="alert bleu">Laissez les cellules jaunes vides pour voir les totaux globaux.</div>
             </div>
 
-            <!-- 9. FRAIS RÉELS -->
+            <!-- 10. FRAIS RÉELS -->
             <div class="tab-content" id="frais">
-                <h3>🧾 Frais réels</h3>
-                <p class="subtitle">Calcul de vos frais professionnels déductibles pour votre déclaration d'impôts.</p>
+                <h3>🧾 Frais Réels</h3>
+                <div class="divider"></div>
+                <p>Calcul de vos frais professionnels déductibles pour votre déclaration d'impôts.</p>
                 <div class="alert bleu">Saisissez uniquement dans les cases en vert clair. Le fichier compare automatiquement les 4 options et indique la plus avantageuse.</div>
                 <div class="bloc">
                     <div class="bloc-titre">Profil à renseigner</div>
-                    <div class="item"><span class="col-label">Comédien</span><span class="col-desc">Active le forfait 5% (vêtements, coiffure, téléphone...) — aucun justificatif requis</span></div>
-                    <div class="item"><span class="col-label">Musicien</span><span class="col-desc">Active le forfait 14% (instruments, cours, kiné, ostéo...) — aucun justificatif requis</span></div>
+                    <div class="item"><span class="col-label vert">Comédien</span><span class="col-desc">Active le forfait 5% (vêtements, coiffure, téléphone...) — aucun justificatif requis</span></div>
+                    <div class="item"><span class="col-label vert">Musicien</span><span class="col-desc">Active le forfait 14% (instruments, cours, kiné, ostéo...) — aucun justificatif requis</span></div>
                 </div>
                 <div class="bloc">
                     <div class="bloc-titre">4 options comparées automatiquement</div>
@@ -404,10 +410,11 @@
                 </div>
             </div>
 
-            <!-- 10. AIDE & LIENS -->
+            <!-- 11. AIDE & LIENS -->
             <div class="tab-content" id="aide">
-                <h3>💡 Aide & Liens</h3>
-                <p class="subtitle">Retrouvez dans cet onglet tous les liens utiles : plateformes de paie, ressources professionnelles et outils complémentaires.</p>
+                <h3>💡 Aide &amp; Liens</h3>
+                <div class="divider"></div>
+                <p>Retrouvez dans cet onglet tous les liens utiles : plateformes de paie, ressources professionnelles et outils complémentaires.</p>
                 <div class="bloc">
                     <div class="bloc-titre">Plateformes de paie</div>
                     <div class="item"><span class="col-label">🔑</span><span class="col-desc"><b>Coffre Xotis</b> — Dubbing Brothers, Imagine...</span></div>
@@ -420,14 +427,13 @@
                     <div class="bloc-titre">Ressources utiles</div>
                     <div class="item"><span class="col-label">🔗</span><span class="col-desc"><b>RSdoublage</b> — déclarer vos œuvres à l'Adami</span></div>
                     <div class="item"><span class="col-label">🔗</span><span class="col-desc"><b>mescachets.com</b> — simulateur ARE complémentaire</span></div>
-                    <div class="item"><span class="col-label">🔗</span><span class="col-desc"><b>lesvoix.fr</b> — association de protection du métier des comédiens au micro</span></div>
+                    <div class="item"><span class="col-label">🔗</span><span class="col-desc"><b>lesvoix.fr</b> — association de protection du doublage</span></div>
                 </div>
             </div>
 
         </div>
     </div>
 </div>
-
 <script>
     const tabs = document.querySelectorAll('.tab-btn');
     const contents = document.querySelectorAll('.tab-content');
