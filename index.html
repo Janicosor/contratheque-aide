@@ -206,7 +206,7 @@
         <nav class="sidebar">
             <div class="sidebar-section">Général</div>
             <button class="tab-btn active" data-tab="essentiel"><span class="num">1</span> L'Essentiel</button>
-            <button class="tab-btn" data-tab="conseils"><span class="num">2</span> Conseils &amp; Astuces</button>
+            <button class="tab-btn" data-tab="conseils"><span class="num">2</span> Démarrage, Conseils &amp; Astuces</button>
             <div class="sidebar-section">Onglets</div>
             <button class="tab-btn" data-tab="contrats"><span class="num">3</span> Contrats</button>
             <button class="tab-btn" data-tab="suivida"><span class="num">4</span> Suivi DA</button>
@@ -240,8 +240,14 @@
 
             <!-- 2. CONSEILS & ASTUCES -->
             <div class="tab-content" id="conseils">
-                <h3>💡 Conseils &amp; Astuces</h3>
+                <h3>💡 Démarrage, Conseils &amp; Astuces</h3>
                 <div class="divider"></div>
+                <div class="bloc">
+                    <div class="bloc-titre">Démarrage</div>
+                    <div class="item"><span class="col-label orange">!</span><span class="col-desc"><b>Ajoutez vos DA dans 📈 DONNÉES (onglet vert)</b>, colonne A (en vert). Saisissez vos DA au format NOM Prénom (par exemple : "LEBLANC Juste" sans laisser d'espace après le prénom). Sans ça, la liste déroulante dans CONTRATS sera vide. Même chose pour les studios / prods, et les titres de séries ou autres (colonnes D et G)</span></div>
+                    <div class="item"><span class="col-label orange">!</span><span class="col-desc"><b>Renseignez votre profil</b> — Toujours dans 📈 DONNÉES, remplissez la zone profil (colonne C) : votre nom, votre année de départ dans le fichier, et votre annexe (8 ou 10). Ces informations alimentent les statistiques et le calcul ARE. .</span></div>
+                    <div class="item"><span class="col-label orange">!</span><span class="col-desc"><b>Saisissez votre premier contrat</b> — Une ligne par contrat, ne pas sauter de ligne, et ne remplir <b>que les cases vertes</b>, les autres se calculent toutes seules</span></div>
+                </div>
                 <div class="bloc">
                     <div class="bloc-titre">⚠️ Règles essentielles</div>
                     <div class="item"><span class="col-label orange">!</span><span class="col-desc"><b>Ne jamais supprimer de colonnes ou de lignes</b> — masquez-les si vous voulez les cacher. Les calculs fonctionnent même sur les lignes et colonnes masquées.</span></div>
@@ -266,7 +272,7 @@
 
             <!-- 3. CONTRATS -->
             <div class="tab-content" id="contrats">
-                <h3>📋 L'onglet CONTRATS</h3>
+                <h3>💼 L'onglet CONTRATS</h3>
                 <div class="divider"></div>
                 <p>C'est ici que vous saisissez tous vos contrats. <b>Une ligne = un contrat.</b></p>
                 <div class="bloc">
@@ -284,6 +290,8 @@
                 </div>
                 <div class="alert bleu">🔒 Les colonnes non vertes se calculent seules et se réparent automatiquement si modifiées par erreur.</div>
                 <div class="alert orange">AB affiche "=>" ? Normal pour Jeu Vidéo, Théâtre, Pub... Saisissez le salaire manuellement en AC.</div>
+                <div class="alert bleu">💭 Au bout d'un moment, il faudra descendre loin en bas pour saisir un nouveau contrat sur la dernière ligne. N'hésitez pas à masquer des lignes que vous n'avez plus besoin de voir. Pas d'inquiétude, elles seront toujours intégrées à tous les autres calculs (sauf dans récap mensuel), mêmes si invisibles. (par contre, n'essayez surtout pas de les supprimer !) </div>
+                
             </div>
 
             <!-- 4. SUIVI DA -->
@@ -332,7 +340,7 @@
 
             <!-- 6. DONNÉES -->
             <div class="tab-content" id="donnees">
-                <h3>📝 L'onglet DONNÉES</h3>
+                <h3>📈 L'onglet DONNÉES</h3>
                 <div class="divider"></div>
                 <p>La base de tout le fichier. Gérez ici vos listes de référence.</p>
                 <div class="bloc">
@@ -414,7 +422,7 @@
             <div class="tab-content" id="aide">
                 <h3>💡 Aide &amp; Liens</h3>
                 <div class="divider"></div>
-                <p>Retrouvez dans cet onglet tous les liens utiles : plateformes de paie, ressources professionnelles et outils complémentaires.</p>
+                <p>Retrouvez dans cet onglet <b>les différents guides</b>, <b>les mentions légales</b>, et tous les <b>liens utiles</b> : plateformes de paie, ressources professionnelles et outils complémentaires.</p>
                 <div class="bloc">
                     <div class="bloc-titre">Plateformes de paie</div>
                     <div class="item"><span class="col-label">🔑</span><span class="col-desc"><b>Coffre Xotis</b> — Dubbing Brothers, Imagine...</span></div>
@@ -427,6 +435,10 @@
                     <div class="bloc-titre">Ressources utiles</div>
                     <div class="item"><span class="col-label">🔗</span><span class="col-desc"><b>RSdoublage</b></span></div>
                     <div class="item"><span class="col-label">🔗</span><span class="col-desc"><b>lesvoix.fr etc.</b></span></div>
+                </div>
+                  <div class="bloc">
+                    <div class="bloc-titre">Onglet libre</div>
+                    <div class="item"><span class="col-label">🔗</span><span class="col-desc">🕺 Vous pouvez ajouter d'autres éléments sur cet onglet. il n'est pas protégé.</span></div>
                 </div>
             </div>
 
