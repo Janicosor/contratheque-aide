@@ -268,6 +268,16 @@
                     <div class="item"><span class="col-label vert">✓</span><span class="col-desc">Faire une copie de sauvegarde mensuelle du fichier</span></div>
                 </div>
                 <div class="alert vert">✅ Si une formule disparaît par erreur, <b>pas de panique</b> — elle se remet en place automatiquement à la prochaine saisie dans la cellule.</div>
+                <div class="bloc">
+                <div class="bloc-titre">📋 Check-list après copie d'un fichier Contrathèque</div>
+                <div class="item"><span class="col-label orange">1</span><span class="col-desc"><b>Déclencheurs</b> — ouvrir Apps Script → lancer <b>installerDeclencheur()</b> → obligatoire, les déclencheurs ne se copient pas automatiquement</span></div>
+                <div class="item"><span class="col-label orange">2</span><span class="col-desc"><b>Menu Bienvenue</b> — recharger la page après installerDeclencheur() pour que le menu apparaisse</span></div>
+                <div class="item"><span class="col-label orange">3</span><span class="col-desc"><b>Formule A6 de SUIVI DA</b> — vérifier qu'elle pointe vers DONNÉES!B9:B310</span></div>
+                <div class="item"><span class="col-label orange">4</span><span class="col-desc"><b>Formule E5 de SUIVI DA</b> — démasquer ligne 5, vérifier la formule RECHERCHEV, remasquer</span></div>
+                <div class="item"><span class="col-label orange">5</span><span class="col-desc"><b>Colonne C de DONNÉES</b> — vérifier qu'elle est bien masquée</span></div>
+                <div class="item"><span class="col-label orange">6</span><span class="col-desc"><b>Onglet Frais Réels</b> — supprimer si version CONTRATHEQUE simple</span></div>
+                <div class="item"><span class="col-label orange">7</span><span class="col-desc"><b>Données utilisateur</b> — vider CONTRATS, DONNÉES, SUIVI DA avant distribution</span></div>
+            </div>
             </div>
 
             <!-- 3. CONTRATS -->
