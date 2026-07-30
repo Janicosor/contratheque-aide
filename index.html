@@ -217,6 +217,8 @@
             <button class="tab-btn" data-tab="stats"><span class="num">9</span> Stats mensuelles</button>
             <button class="tab-btn" data-tab="frais"><span class="num">10</span> Frais réels</button>
             <button class="tab-btn" data-tab="aide"><span class="num">11</span> Aide &amp; Liens</button>
+            <div class="sidebar-section">Version Excel</div>
+            <button class="tab-btn" data-tab="excel"><span class="num">⊞</span> Conseils Excel</button>
         </nav>
 
         <div class="content-area">
@@ -269,15 +271,15 @@
                 </div>
                 <div class="alert vert">✅ Si une formule disparaît par erreur, <b>pas de panique</b> — elle se remet en place automatiquement à la prochaine saisie dans la cellule.</div>
                 <div class="bloc">
-                <div class="bloc-titre">📋 Check-list après copie d'un fichier Contrathèque (mémo à l'attention du développeur)</div>
-                <div class="item"><span class="col-label orange">1</span><span class="col-desc"><b>Déclencheurs</b> — ouvrir Apps Script → lancer <b>installerDeclencheur()</b> → obligatoire, les déclencheurs ne se copient pas automatiquement</span></div>
-                <div class="item"><span class="col-label orange">2</span><span class="col-desc"><b>Menu Bienvenue</b> — recharger la page après installerDeclencheur() pour que le menu apparaisse</span></div>
-                <div class="item"><span class="col-label orange">3</span><span class="col-desc"><b>Formule A6 de SUIVI DA</b> — vérifier qu'elle pointe vers DONNÉES!B9:B310</span></div>
-                <div class="item"><span class="col-label orange">4</span><span class="col-desc"><b>Formule E5 de SUIVI DA</b> — démasquer ligne 5, vérifier la formule RECHERCHEV, remasquer</span></div>
-                <div class="item"><span class="col-label orange">5</span><span class="col-desc"><b>Colonne C de DONNÉES</b> — vérifier qu'elle est bien masquée</span></div>
-                <div class="item"><span class="col-label orange">6</span><span class="col-desc"><b>Onglet Frais Réels</b> — supprimer si version CONTRATHEQUE simple</span></div>
-                <div class="item"><span class="col-label orange">7</span><span class="col-desc"><b>Données utilisateur</b> — vider CONTRATS, DONNÉES, SUIVI DA avant distribution</span></div>
-            </div>
+                    <div class="bloc-titre">📋 Check-list après copie d'un fichier Contrathèque (mémo à l'attention du développeur)</div>
+                    <div class="item"><span class="col-label orange">1</span><span class="col-desc"><b>Déclencheurs</b> — ouvrir Apps Script → lancer <b>installerDeclencheur()</b> → obligatoire, les déclencheurs ne se copient pas automatiquement</span></div>
+                    <div class="item"><span class="col-label orange">2</span><span class="col-desc"><b>Menu Bienvenue</b> — recharger la page après installerDeclencheur() pour que le menu apparaisse</span></div>
+                    <div class="item"><span class="col-label orange">3</span><span class="col-desc"><b>Formule A6 de SUIVI DA</b> — vérifier qu'elle pointe vers DONNÉES!B9:B310</span></div>
+                    <div class="item"><span class="col-label orange">4</span><span class="col-desc"><b>Formule E5 de SUIVI DA</b> — démasquer ligne 5, vérifier la formule RECHERCHEV, remasquer</span></div>
+                    <div class="item"><span class="col-label orange">5</span><span class="col-desc"><b>Colonne C de DONNÉES</b> — vérifier qu'elle est bien masquée</span></div>
+                    <div class="item"><span class="col-label orange">6</span><span class="col-desc"><b>Onglet Frais Réels</b> — supprimer si version CONTRATHEQUE simple</span></div>
+                    <div class="item"><span class="col-label orange">7</span><span class="col-desc"><b>Données utilisateur</b> — vider CONTRATS, DONNÉES, SUIVI DA avant distribution</span></div>
+                </div>
             </div>
 
             <!-- 3. CONTRATS -->
@@ -295,13 +297,12 @@
                     <div class="item"><span class="col-label">T</span><span class="col-desc"><b>Lignage</b> (nombre de lignes, ou de séances pour le chant)</span></div>
                     <div class="item"><span class="col-label">AC</span><span class="col-desc"><b>Droits</b> de diffusion (DAD-R), reporter le montants écrit au contrat</span></div>
                     <div class="item"><span class="col-label">AD</span><span class="col-desc"><b>Cachets/H</b> — vide = 1 cachet (12h ARE), "3" = 3 cachets de 12h (36h), "3h" = 3h réelles (cette colonne peut être masquée si vous n'avez que des contrats à un seul cachet)</span></div>
-                    <div class="item"><span class="col-label">AG</span><span class="col-desc"><b>Date de paiement</b> (double-clic 🗓) (si vous n'avez pas la date exacte, mettez la date du jour, pour bien indiquer que c'est payé. La date se colore différemment selon que la paie est versée dans les temps ou non : 🟢 Vert => Payé dans les temps / 🔴 Rouge => Retard de paiement)</span></div>
-                    <div class="item"><span class="col-label">AH</span><span class="col-desc"><b>Récap mensuel</b> automatique — survolez pour voir le détail. 💡 Et si les réultats sont incohérents (suite à une migration des données, ou à un tri par filtre), 👉 lancez un recalcul de ce récap mensuel, cela remettra tout en place. 🕺 Pour cela, cliquer sur "📢 Bienvenue !" dans le menu puis sur "Recalculer récap mensuel"</span></div>
+                    <div class="item"><span class="col-label">AG</span><span class="col-desc"><b>Date de paiement</b> (double-clic 🗓) — La date se colore : 🟢 Vert = Payé dans les temps / 🔴 Rouge = Retard de paiement</span></div>
+                    <div class="item"><span class="col-label">AH</span><span class="col-desc"><b>Récap mensuel</b> automatique — survolez pour voir le détail.</span></div>
                 </div>
                 <div class="alert bleu">🔒 Les colonnes non vertes se calculent seules et se réparent automatiquement si modifiées par erreur.</div>
                 <div class="alert orange">AB affiche "=>" ? Normal pour Jeu Vidéo, Théâtre, Pub... Saisissez le salaire manuellement en AC.</div>
-                <div class="alert bleu">💭 Au bout d'un moment, il faudra descendre loin pour saisir un nouveau contrat sur la dernière ligne. N'hésitez pas à masquer des lignes que vous n'avez plus besoin de voir. Pas d'inquiétude, mêmes si elles sont invisibles, elles seront toujours intégrées à tous les autres calculs (sauf dans récap mensuel). ⚠️ par contre, n'essayez surtout pas de les supprimer ! </div>
-                
+                <div class="alert bleu">💭 N'hésitez pas à masquer des lignes que vous n'avez plus besoin de voir. ⚠️ Ne les supprimez surtout pas !</div>
             </div>
 
             <!-- 4. SUIVI DA -->
@@ -309,10 +310,10 @@
                 <h3>👥 L'onglet SUIVI DA</h3>
                 <div class="divider"></div>
                 <p>Vue automatique de votre relation avec chaque DA.</p>
-                <p>⚠️ LA LIGNE 5 EST MASQUÉE / NE PAS LA DÉ-MASQUER NI, ENCORE MOINS ! LA SUPPRIMER  ⚠️</p>
+                <p>⚠️ LA LIGNE 5 EST MASQUÉE / NE PAS LA DÉ-MASQUER NI, ENCORE MOINS ! LA SUPPRIMER ⚠️</p>
                 <div class="bloc">
                     <div class="bloc-titre">Colonnes à remplir</div>
-                    <div class="item"><span class="col-label vert">E</span><span class="col-desc">Date à laquelle vous avez croisé ce DA (dernier contact)</span></div>
+                    <div class="item"><span class="col-label vert">E</span><span class="col-desc">Date à laquelle vous avez croisé ce DA (dernier contact) — <b>double-cliquez</b> pour saisir la date facilement</span></div>
                     <div class="item"><span class="col-label">F</span><span class="col-desc">Case à cocher ✓ — DA plus en activité ou plus suivi (exclu des DA à relancer)</span></div>
                 </div>
                 <div class="bloc">
@@ -325,9 +326,8 @@
                     <div class="bloc-titre">⚠️ Bon usage — à lire avant tout</div>
                     <div class="item"><span class="col-label orange">!</span><span class="col-desc">Cet outil de suivi est une aide personnelle à la gestion de votre réseau — pas un outil de démarchage systématique.</span></div>
                     <div class="item"><span class="col-label orange">!</span><span class="col-desc">Il n'y a <b>aucune règle</b> imposée. Chaque comédien gère sa relation avec les DA à sa façon.</span></div>
-                    <div class="item"><span class="col-label">💬</span><span class="col-desc">La pratique communément admise : un contact tous les <b>2 à 3 mois</b> — un simple bonjour en studio pourra suffire, et vous évitera de saturer le DA avec un texto de plus dans sa journée.</span></div>
-                    <div class="item"><span class="col-label">📱</span><span class="col-desc">Pensez-y : pour vous, c'est un texto envoyé. Pour un DA actif, c'est l'un des <b>nombreux messages reçus dans la journée</b>. Chaque contact compte — inutile de multiplier les relances.</span></div>
-                    <div class="item"><span class="col-label vert">💡</span><span class="col-desc">Astuce : profitez d'une <b>actualité artistique à partager</b> (une diffusion, un projet, une info du milieu...) — le contact sera plus naturel et moins perçu comme une démarche de recherche de travail.</span></div>
+                    <div class="item"><span class="col-label">💬</span><span class="col-desc">La pratique communément admise : un contact tous les <b>2 à 3 mois</b> — un simple bonjour en studio pourra suffire.</span></div>
+                    <div class="item"><span class="col-label vert">💡</span><span class="col-desc">Astuce : profitez d'une <b>actualité artistique à partager</b> — le contact sera plus naturel.</span></div>
                     <div class="item"><span class="col-label">👥</span><span class="col-desc">Certains DA apprécient les contacts réguliers. D'autres moins. <b>Adaptez-vous à chaque DA.</b></span></div>
                     <div class="item"><span class="col-label">🔴</span><span class="col-desc">Un DA en rouge ne signifie pas qu'il <b>faut</b> rappeler — il signifie simplement que le temps passe.</span></div>
                 </div>
@@ -361,7 +361,7 @@
                     <div class="item"><span class="col-label vert">H</span><span class="col-desc">Les séries et titres récurrents</span></div>
                 </div>
                 <div class="alert orange">⚠️ Ajoutez toujours en bas de liste, sans laisser de ligne vide.</div>
-                <div class="alert bleu">La zone <b>Profil</b> (colonne C en haut) contient votre nom, année de départ et annexe (8 ou 10).</div>
+                <div class="alert bleu">La zone <b>Profil</b> (colonne B en haut) contient votre nom, année de départ et annexe (8 ou 10). La colonne C (dates suivi DA) est masquée — ne pas la supprimer.</div>
             </div>
 
             <!-- 7. ARE -->
@@ -373,12 +373,12 @@
                 <div class="bloc">
                     <div class="bloc-titre">Cellules saisissables</div>
                     <div class="item"><span class="col-label vert">B5</span><span class="col-desc">Mois à simuler — saisir le 1er jour du mois (ex: 01/07/2026)</span></div>
-                    <div class="item"><span class="col-label vert">B14</span><span class="col-desc"><b>FCT manuelle = votre date anniversaire</b> — point de départ des 12 mois (il vaut mieux l'écrire, pour plus de précision. Référez-vous à votre notification d'admission France Travail)</span></div>
+                    <div class="item"><span class="col-label vert">B14</span><span class="col-desc"><b>FCT manuelle = votre date anniversaire</b> — point de départ des 12 mois</span></div>
                     <div class="item"><span class="col-label vert">B22</span><span class="col-desc">ICCP — relevé annuel Congés Spectacles. N'impacte que le 1er mois d'indemnisation.</span></div>
                     <div class="item"><span class="col-label vert">B23</span><span class="col-desc">Prime de licenciement au-delà du légal — très rare en doublage, laisser vide si rien reçu.</span></div>
                     <div class="item"><span class="col-label vert">B37</span><span class="col-desc">AJ nette connue (optionnel) — depuis votre notification d'admission France Travail.</span></div>
                 </div>
-                <div class="alert bleu">ℹ️ Le SR est calculé sur les salaires bruts uniquement, hors droits de diffusion — conformément au calcul France Travail. L'AJ estimée peut différer légèrement.</div>
+                <div class="alert bleu">ℹ️ Le SR est calculé sur les salaires bruts uniquement, hors droits de diffusion — conformément au calcul France Travail.</div>
             </div>
 
             <!-- 8. TABLEAU DE BORD -->
@@ -391,7 +391,6 @@
                     <div class="bloc-titre">Ce que vous y trouverez</div>
                     <div class="item"><span class="col-label">📅</span><span class="col-desc">Salaires par année depuis votre début</span></div>
                     <div class="item"><span class="col-label">👥</span><span class="col-desc">Vos DA les plus fréquents</span></div>
-                    <div class="item"><span class="col-label">🎬</span><span class="col-desc">Répartition par genre</span></div>
                     <div class="item"><span class="col-label">🏢</span><span class="col-desc">Studios habituels</span></div>
                 </div>
             </div>
@@ -447,10 +446,51 @@
                     <div class="item"><span class="col-label">🔗</span><span class="col-desc"><b>RSdoublage</b></span></div>
                     <div class="item"><span class="col-label">🔗</span><span class="col-desc"><b>lesvoix.fr etc.</b></span></div>
                 </div>
-                  <div class="bloc">
+                <div class="bloc">
                     <div class="bloc-titre">Onglet libre</div>
-                    <div class="item"><span class="col-label">🔗</span><span class="col-desc">🕺 Vous pouvez ajouter d'autres éléments sur cet onglet. il n'est pas protégé.</span></div>
+                    <div class="item"><span class="col-label">🔗</span><span class="col-desc">🕺 Vous pouvez ajouter d'autres éléments sur cet onglet. Il n'est pas protégé.</span></div>
                 </div>
+            </div>
+
+            <!-- 12. CONSEILS EXCEL -->
+            <div class="tab-content" id="excel">
+                <h3>⊞ Contrathèque — Version Excel</h3>
+                <div class="divider"></div>
+                <p>La version Excel de Contrathèque fonctionne avec <b>Excel 365</b> (Windows). Elle nécessite quelques étapes spécifiques au premier démarrage.</p>
+
+                <div class="bloc">
+                    <div class="bloc-titre">⚠️ Premier démarrage — Activer les macros</div>
+                    <div class="item"><span class="col-label orange">1</span><span class="col-desc">À l'ouverture du fichier <b>.xlsm</b>, Excel affiche une <b>barre jaune</b> en haut de l'écran.</span></div>
+                    <div class="item"><span class="col-label orange">2</span><span class="col-desc">Cliquez sur <b>"Activer le contenu"</b> — cette étape est indispensable.</span></div>
+                    <div class="item"><span class="col-label orange">3</span><span class="col-desc">Sans cette action, le calendrier de saisie de dates <b>ne fonctionnera pas</b>.</span></div>
+                    <div class="item"><span class="col-label vert">✓</span><span class="col-desc">Cette action n'est à faire <b>qu'une seule fois</b> par ordinateur.</span></div>
+                </div>
+
+                <div class="bloc">
+                    <div class="bloc-titre">🗓 Saisie des dates — Calendrier intégré</div>
+                    <div class="item"><span class="col-label vert">A</span><span class="col-desc"><b>CONTRATS colonne A</b> — double-cliquez pour saisir la date du contrat</span></div>
+                    <div class="item"><span class="col-label vert">AG</span><span class="col-desc"><b>CONTRATS colonne AG</b> — double-cliquez pour saisir la date de paiement</span></div>
+                    <div class="item"><span class="col-label vert">E</span><span class="col-desc"><b>SUIVI DA colonne E</b> — double-cliquez pour saisir la date de dernier contact avec le DA</span></div>
+                    <div class="alert bleu">💡 Une boîte de dialogue s'ouvre avec la date du jour pré-remplie. Modifiez-la si besoin au format jj/mm/aaaa.</div>
+                </div>
+
+                <div class="bloc">
+                    <div class="bloc-titre">⚙️ Différences avec la version Google Sheets</div>
+                    <div class="item"><span class="col-label">📋</span><span class="col-desc">Pas de menu "Bienvenue" — les fonctions automatiques sont gérées par le VBA intégré.</span></div>
+                    <div class="item"><span class="col-label">📋</span><span class="col-desc">Pour coller des valeurs : utilisez <b>Ctrl+Alt+V → Valeurs</b> au lieu de Ctrl+Shift+V.</span></div>
+                    <div class="item"><span class="col-label">📋</span><span class="col-desc">Le fichier doit rester au format <b>.xlsm</b> pour conserver les macros.</span></div>
+                    <div class="item"><span class="col-label">📋</span><span class="col-desc">Nécessite <b>Excel 365</b> — les fonctions FILTRE, UNIQUE et SEQUENCE ne sont pas disponibles dans les versions antérieures.</span></div>
+                </div>
+
+                <div class="bloc">
+                    <div class="bloc-titre">✅ Bonnes pratiques spécifiques Excel</div>
+                    <div class="item"><span class="col-label vert">✓</span><span class="col-desc">Ne jamais enregistrer en <b>.xlsx</b> — vous perdriez les macros VBA (calendrier, stockage des dates DA).</span></div>
+                    <div class="item"><span class="col-label vert">✓</span><span class="col-desc">Si Excel propose de "réparer" le fichier à l'ouverture, acceptez — certaines fonctions dynamiques sont signalées comme inconnues mais fonctionnent correctement.</span></div>
+                    <div class="item"><span class="col-label vert">✓</span><span class="col-desc">Ne jamais supprimer de colonnes ou de lignes — masquez-les si vous voulez les cacher.</span></div>
+                    <div class="item"><span class="col-label vert">✓</span><span class="col-desc">Faites une sauvegarde mensuelle du fichier.</span></div>
+                </div>
+
+                <div class="alert orange">⚠️ La version Excel est distribuée en <b>.xlsm</b> (classeur avec macros). Si votre entreprise ou antivirus bloque les macros, contactez votre administrateur système.</div>
             </div>
 
         </div>
