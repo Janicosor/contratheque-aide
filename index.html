@@ -341,18 +341,37 @@
                 <div class="alert bleu">La cellule <b>J3</b> (fond rosé) affiche le total des montants non encore perçus sur les résultats filtrés.</div>
             </div>
 
-            <!-- 6. DONNÉES -->
+<!-- 6. DONNÉES -->
             <div class="tab-content" id="donnees">
                 <h3>📈 L'onglet DONNÉES</h3>
                 <div class="divider"></div>
                 <p>La base de tout le fichier. Gérez ici vos listes déroulantes de référence.</p>
+
                 <div class="bloc">
                     <div class="bloc-titre">Colonnes VERTES uniquement à remplir</div>
-                    <div class="item"><span class="col-label vert">A</span><span class="col-desc">3 premières colonnes : Bloc DA ou Réals — format NOM Prénom (ex: LEBLANC Juste) ⚠️ sans espace après le prénom. Col B : double-cliquez pour saisir la date de suivi. Col C : à cocher si ce DA n'exerce plus. ⚠️ <b>ATTENTION :</b> Si vous voulez retirer un DA, sélectionnez la ligne avec les 3 colonnes A, B et C ensemble, puis supprimez (touche Suppr), car la colonne A se trie automatiquement. Si jamais cela arrive, utilisez Ctrl+Z (Annuler).</span></div>
-                    <div class="item"><span class="col-label vert">E</span><span class="col-desc">Les studios et sociétés de production</span></div>
-                    <div class="item"><span class="col-label vert">H</span><span class="col-desc">Les séries et titres récurrents</span></div>
+                    <div class="item">
+                        <span class="col-label vert">A-C</span>
+                        <span class="col-desc">
+                            <b>Bloc DA / Réals :</b>
+                            <ul>
+                                <li><b>A — NOM DA :</b> NOM Prénom (ex: <code>LEBLANC Juste</code>) sans espace après le prénom. Le tri A-Z se fait automatiquement.</li>
+                                <li><b>B — Vu(e) le :</b> Double-cliquez pour saisir la date du dernier contact.</li>
+                                <li><b>C — Case inactif :</b> Cochez si ce DA n'exerce plus ou si vous ne retravaillez plus avec lui.</li>
+                            </ul>
+                        </span>
+                    </div>
+                    <div class="item"><span class="col-label vert">E</span><span class="col-desc"><b>Studios / Prods :</b> Saisissez en colonne E (la colonne F se trie automatiquement).</span></div>
+                    <div class="item"><span class="col-label vert">H</span><span class="col-desc"><b>Séries / Titres :</b> Saisissez en colonne H (la colonne I se trie automatiquement).</span></div>
                 </div>
-                <div class="alert orange">⚠️ Ajoutez toujours en bas de liste, sans laisser de ligne vide.</div>
+
+                <div class="alert orange">
+                    <b>⚠️ RÈGLE D'OR — POUR SUPPRIMER UN DA :</b><br>
+                    Sélectionnez <b>impérativement les 3 cellules A, B et C de la ligne ensemble</b> puis appuyez sur la touche <b>Suppr</b>.<br>
+                    <i>Pourquoi ?</i> Comme la colonne A se trie seule, si vous n'effacez que le nom, la date devient « orpheline » et est envoyée tout en bas, ce qui décale la concordance entre les dates et les noms ! En cas d'erreur, faites immédiatement <b>Ctrl+Z</b> (Annuler).
+                </div>
+
+                <div class="alert orange">⚠️ <b>Pas de ligne vide :</b> ajoutez toujours vos nouveaux éléments directement à la suite en bas de liste.</div>
+                
                 <div class="alert bleu">La zone <b>Profil</b> (colonne B en haut) contient votre nom, année de départ et annexe. En B3, l'année de départ est 2026 par défaut. 💭 Si vos premiers contrats saisis démarrent en 2019 par exemple, modifiez l'année en B3 et saisissez 2019.</div>
             </div>
 
