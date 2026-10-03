@@ -229,6 +229,8 @@
                 <h3>📱 L'ESSENTIEL en un coup d'oeil</h3>
                 <div class="divider"></div>
                 <p>Votre 1er onglet est une vue résumée de votre activité, optimisée pour une consultation rapide sur mobile.</p>
+                 <div class="alert bleu">🔒 <b>Rien à saisir dans cet onglet</b> — 100% automatique.</div>
+                <div class="bloc">
                 <p>Vous y trouverez :</p>
                 <ul>
                     <li>📅 Vos prochains contrats</li>
@@ -238,7 +240,6 @@
                     <li>👥 Les DA à relancer</li>
                 </ul>
                 <div class="alert orange">ℹ️ <b>Estim. Allocs.</b> — dépend du mois saisi en B5 de l'onglet ARE. Pour voir le mois en cours, saisissez le 1er du mois en ARE!B5.</div>
-                <div class="alert bleu">🔒 <b>Rien à saisir dans cet onglet</b> — tout se calcule automatiquement.</div>
             </div>
 
             <!-- 2. CONSEILS & ASTUCES -->
@@ -359,12 +360,12 @@
                 <p>La base de tout le fichier. Gérez ici vos listes déroulantes de référence.</p>
                 <div class="bloc">
                     <div class="bloc-titre">Colonnes VERTES uniquement à remplir</div>
-                    <div class="item"><span class="col-label vert">A</span><span class="col-desc">Vos DA ou Réals — format NOM Prénom (ex: LEBLANC Juste) ⚠️ sans espace après le prénom. ⚠️ ET ATTENTION : Si vous voulez retirer un DA, attention de sélectionner les 3 colonnes A, B et C, pour suprrimer (touche Suppr), car la colonne A se trie automatiquement, et les autres colonnes se décaleraient. Si cela arrive, utiliser la flèche gauche de Undo/span></div>
+                    <div class="item"><span class="col-label vert">A</span><span class="col-desc">3 premières colonnes : Bloc DA ou Réals — format NOM Prénom (ex: LEBLANC Juste) ⚠️ sans espace après le prénom. Col B : double cliquez pour saisir la date de suivi, Col C : à cocher si ce DA n'exerce plus ou si vous ne travaillez plus avec lui. ⚠️ ET ATTENTION : Si vous voulez retirer un DA, sélectionner la ligne avec les 3 colonnes A, B et C ensembles, pour ensuite suprrimer (touche Suppr), car la colonne A se trie automatiquement, mais les autres se décaleraient. Si jamais cela arrive, utiliser la flèche gauche de Undo/span></div>
                     <div class="item"><span class="col-label vert">E</span><span class="col-desc">Les studios et sociétés de production</span></div>
                     <div class="item"><span class="col-label vert">H</span><span class="col-desc">Les séries et titres récurrents</span></div>
                 </div>
                 <div class="alert orange">⚠️ Ajoutez toujours en bas de liste, sans laisser de ligne vide.</div>
-                <div class="alert bleu">La zone <b>Profil</b> (colonne B en haut) contient votre nom, année de départ et annexe. La colonne C (dates suivi DA) est masquée — ne pas la supprimer. En B3, l'année de départ est 2026 par défaut. 💭 Si vos premiers contrats saisis démarrent en 2019 par exemple, modifiez l'année en B3 et saisissez 2019</div>
+                <div class="alert bleu">La zone <b>Profil</b> (colonne B en haut) contient votre nom, année de départ et annexe. En B3, l'année de départ est 2026 par défaut. 💭 Si vos premiers contrats saisis démarrent en 2019 par exemple, modifiez l'année en B3 et saisissez 2019</div>
             </div>
 
             <!-- 7. ARE -->
@@ -372,16 +373,16 @@
                 <h3>💰 L'onglet ARE</h3>
                 <div class="divider"></div>
                 <p>Simulation de vos allocations chômage (annexe 8 ou 10).</p>
-                <div class="alert orange">📌 <b>Franchise CP :</b> les jours de "franchise congés payés" appliqués par France Travail ne sont pas pris en compte dans le calcul — l'estimation mensuelle peut donc différer du calcul officiel.</div>
+                <div class="alert orange">📌 <b>Franchise CP :</b> les jours de "franchise congés payés" appliqués par France Travail ne sont pas pris en compte dans le calcul — l'estimation mensuelle peut donc différer du calcul officiel. Mais en général, l'estimation est juste au centime près 🎯</div>
                 <div class="bloc">
                     <div class="bloc-titre">Cellules saisissables</div>
                     <div class="item"><span class="col-label vert">B5</span><span class="col-desc">Mois à simuler — saisir le 1er jour du mois (ex: 01/07/2026)</span></div>
-                    <div class="item"><span class="col-label vert">B14</span><span class="col-desc"><b>FCT manuelle = votre date anniversaire</b> — point de départ des 12 mois</span></div>
-                    <div class="item"><span class="col-label vert">B22</span><span class="col-desc">ICCP — relevé annuel Congés Spectacles. N'impacte que le 1er mois d'indemnisation.</span></div>
-                    <div class="item"><span class="col-label vert">B23</span><span class="col-desc">Prime de licenciement au-delà du légal — très rare en doublage, laisser vide si rien reçu.</span></div>
-                    <div class="item"><span class="col-label vert">B37</span><span class="col-desc">AJ nette connue (optionnel) — depuis votre notification d'admission France Travail.</span></div>
+                    <div class="item"><span class="col-label vert">B13</span><span class="col-desc"><b>FCT manuelle = votre date anniversaire</b> — point de départ des 12 mois</span></div>
+                    <div class="item"><span class="col-label vert">B20</span><span class="col-desc">ICCP — relevé annuel Congés Spectacles. N'impacte que le 1er mois d'indemnisation.</span></div>
+                    <div class="item"><span class="col-label vert">B21</span><span class="col-desc">Prime de licenciement au-delà du légal — très rare en doublage, laisser vide si rien reçu.</span></div>
+                    <div class="item"><span class="col-label vert">B33</span><span class="col-desc">AJ nette connue (optionnel) — depuis votre notification d'admission France Travail.</span></div>
                 </div>
-                <div class="alert vert">📌 PRATIQUE : à droite, un petit tableau est proposé pour faciliter la vue sur vos contrats lors de votre déclaration mensuelle. (Vous avez juste à sélectionner le mois de votre déclaration 😉)</div>
+                <div class="alert vert">📌 PRATIQUE : à droite, un petit tableau est proposé pour faciliter la vue sur vos contrats lors de votre déclaration mensuelle. (Vous avez juste à sélectionner le mois de votre déclaration en H3 😉)</div>
                 <div class="alert bleu">ℹ️ Le SR est calculé sur les salaires bruts uniquement, hors droits de diffusion — conformément au calcul France Travail.</div>
             </div>
 
