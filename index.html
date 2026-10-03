@@ -184,17 +184,6 @@
         .badge.orange { background: #fff3e0; color: #e65100; }
         .badge.rouge { background: #ffebee; color: #c62828; }
         .badge.bleu { background: #e8f0fb; color: #1a3c6e; }
-        .astuce {
-            background: linear-gradient(135deg, #e8f0fb, #f0f4ff);
-            border: 1px solid #c5d4f0;
-            border-radius: 8px;
-            padding: 12px 16px;
-            margin-bottom: 10px;
-            font-size: 0.85rem;
-            line-height: 1.6;
-            color: var(--accent);
-        }
-        .astuce strong { display: block; margin-bottom: 4px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
     </style>
 </head>
 <body>
@@ -229,18 +218,19 @@
                 <h3>📱 L'ESSENTIEL en un coup d'oeil</h3>
                 <div class="divider"></div>
                 <p>Votre 1er onglet est une vue résumée de votre activité, optimisée pour une consultation rapide sur mobile.</p>
-                 <div class="alert bleu">🔒 <b>Rien à saisir dans cet onglet</b> — 100% automatique.</div>
+                <div class="alert bleu">🔒 <b>Rien à saisir dans cet onglet</b> — 100% automatique.</div>
                 <div class="bloc">
-                <p>Vous y trouverez :</p>
-                <ul>
-                    <li>📅 Vos prochains contrats</li>
-                    <li>📊 Les chiffres du mois en cours</li>
-                    <li>💰 Votre situation ARE</li>
-                    <li>📈 Les totaux de l'année</li>
-                    <li>👥 Les DA à relancer</li>
-                </ul>
-                <div class="alert orange">ℹ️ <b>Estim. Allocs.</b> — dépend du mois saisi en B5 de l'onglet ARE. Pour voir le mois en cours, saisissez le 1er du mois en ARE!B5.</div>
-            </div>
+                    <p>Vous y trouverez :</p>
+                    <ul>
+                        <li>📅 Vos prochains contrats</li>
+                        <li>📊 Les chiffres du mois en cours</li>
+                        <li>💰 Votre situation ARE</li>
+                        <li>📈 Les totaux de l'année</li>
+                        <li>👥 Les DA à relancer</li>
+                    </ul>
+                    <div class="alert orange">ℹ️ <b>Estim. Allocs.</b> — dépend du mois saisi en B5 de l'onglet ARE. Pour voir le mois en cours, saisissez le 1er du mois en ARE!B5.</div>
+                </div>
+            </div> <!-- Balise fermée ici -->
 
             <!-- 2. CONSEILS & ASTUCES -->
             <div class="tab-content" id="conseils">
@@ -248,8 +238,8 @@
                 <div class="divider"></div>
                 <div class="bloc">
                     <div class="bloc-titre">Démarrage</div>
-                    <div class="item"><span class="col-label orange">!</span><span class="col-desc"><b>Ajoutez vos DA dans 📈 DONNÉES (onglet vert)</b>, colonne A (en vert). Saisissez vos DA au format NOM Prénom (par exemple : "LEBLANC Juste" sans laisser d'espace après le prénom). Sans ça, la liste déroulante dans 💼 CONTRATS sera vide. Même chose pour les studios / prods, et les titres de séries ou autres (colonnes E & H)</span></div>
-                    <div class="item"><span class="col-label orange">!</span><span class="col-desc"><b>Renseignez votre profil</b> — Toujours dans 📈 DONNÉES, remplissez la zone profil : votre nom, votre année de départ dans le fichier, et votre annexe (8 ou 10). Ces informations alimentent les statistiques et le calcul ARE. .</span></div>
+                    <div class="item"><span class="col-label orange">!</span><span class="col-desc"><b>Ajoutez vos DA dans 📈 DONNÉES (onglet vert)</b>, colonne A (en vert). Saisissez vos DA au format NOM Prénom (par exemple : "LEBLANC Juste" sans laisser d'espace après le prénom). Sans ça, la liste déroulante dans 💼 CONTRATS sera vide. Même chose pour les studios / prods, et les titres de séries ou autres (colonnes E &amp; H)</span></div>
+                    <div class="item"><span class="col-label orange">!</span><span class="col-desc"><b>Renseignez votre profil</b> — Toujours dans 📈 DONNÉES, remplissez la zone profil : votre nom, votre année de départ dans le fichier, et votre annexe (8 ou 10). Ces informations alimentent les statistiques et le calcul ARE.</span></div>
                     <div class="item"><span class="col-label orange">!</span><span class="col-desc"><b>Saisissez votre premier contrat</b> — Une ligne par contrat, ne pas sauter de ligne, et ne remplir <b>que les cases vertes</b>, les autres se calculent toutes seules</span></div>
                 </div>
                 <div class="bloc">
@@ -274,7 +264,7 @@
                 </div>
                 <div class="alert vert">✅ Si une formule disparaît par erreur, <b>pas de panique</b> — elle se remet en place automatiquement à la prochaine saisie dans la cellule.</div>
                 <div class="bloc">
-                    <div class="bloc-titre">📋 Check-list après copie d'un fichier Contrathèque (mémo à l'attention du développeur)</div>
+                    <div class="bloc-titre">📋 Check-list après copie d'un fichier Contrathèque (mémo développeur)</div>
                     <div class="item"><span class="col-label orange">1</span><span class="col-desc"><b>Déclencheurs</b> — ouvrir Apps Script → lancer <b>installerDeclencheur()</b> → obligatoire, les déclencheurs ne se copient pas automatiquement</span></div>
                     <div class="item"><span class="col-label orange">2</span><span class="col-desc"><b>Menu Bienvenue</b> — recharger la page après installerDeclencheur() pour que le menu apparaisse</span></div>
                     <div class="item"><span class="col-label orange">3</span><span class="col-desc"><b>Formule A6 de SUIVI DA</b> — vérifier qu'elle pointe vers DONNÉES!B9:B310</span></div>
@@ -299,13 +289,13 @@
                     <div class="item"><span class="col-label">E</span><span class="col-desc"><b>Studio / Prod</b> (liste déroulante 🔽)</span></div>
                     <div class="item"><span class="col-label">F</span><span class="col-desc"><b>Titre</b> de la série ou du film (liste déroulante 🔽)</span></div>
                     <div class="item"><span class="col-label">T</span><span class="col-desc"><b>Lignage</b> (nombre de lignes, ou de séances pour le chant)</span></div>
-                    <div class="item"><span class="col-label">AC</span><span class="col-desc"><b>Droits</b> de diffusion (DAD-R), reporter le montants écrit au contrat</span></div>
+                    <div class="item"><span class="col-label">AC</span><span class="col-desc"><b>Droits</b> de diffusion (DAD-R), reporter le montant écrit au contrat</span></div>
                     <div class="item"><span class="col-label">AD</span><span class="col-desc"><b>Cachets/H</b> — vide = 1 cachet (12h ARE), "3" = 3 cachets de 12h (36h), "3h" = 3h réelles (cette colonne peut être masquée si vous n'avez que des contrats à un seul cachet)</span></div>
-                    <div class="item"><span class="col-label">AG</span><span class="col-desc"><b>Date de paiement</b> (double-clic 🗓) — La date se colore : 🟢 Vert = Payé dans les temps / 🔴 Rouge = Retard de paiement (selon la convention collective propre au doublage)</span></div>
+                    <div class="item"><span class="col-label">AG</span><span class="col-desc"><b>Date de paiement</b> (double-clic 🗓) — La date se colore : 🟢 Vert = Payé dans les temps / 🔴 Rouge = Retard de paiement</span></div>
                     <div class="item"><span class="col-label">AH</span><span class="col-desc"><b>Récap mensuel</b> automatique — survolez pour voir le détail.</span></div>
                 </div>
                 <div class="alert bleu">🔒 Les colonnes non vertes se calculent seules et se réparent automatiquement si modifiées par erreur.</div>
-                <div class="alert orange">AB affiche "=>" ? Normal pour Jeu Vidéo, Théâtre, Pub...  il n'y a pas de forfaits au lignage. Saisissez donc le salaire manuellement dans la colonne 'Droits dDiff.' en AC.</div>
+                <div class="alert orange">AB affiche "=>" ? Normal pour Jeu Vidéo, Théâtre, Pub... il n'y a pas de forfaits au lignage. Saisissez donc le salaire manuellement dans la colonne 'Droits Diff.' en AC.</div>
                 <div class="alert bleu">💭 N'hésitez pas à masquer des lignes que vous n'avez plus besoin de voir. ⚠️ Ne les supprimez surtout pas !</div>
             </div>
 
@@ -314,7 +304,7 @@
                 <h3>👥 L'onglet SUIVI DA</h3>
                 <div class="divider"></div>
                 <p>Vue automatique de votre relation avec chaque DA.</p>
-                <p>⚠️ LA LIGNE 5 EST MASQUÉE / NE PAS LA DÉ-MASQUER NI, ENCORE MOINS ! LA SUPPRIMER ⚠️</p>
+                <p>⚠️ LA LIGNE 5 EST MASQUÉE / NE PAS LA DÉ-MASQUER NI LA SUPPRIMER ⚠️</p>
                 <div class="bloc">
                     <div class="bloc-titre">Colonnes à remplir</div>
                     <div class="item"><span class="col-label vert">E</span><span class="col-desc">Date à laquelle vous avez croisé ce DA (dernier contact) — <b>double-cliquez</b> pour saisir la date facilement</span></div>
@@ -324,7 +314,7 @@
                     <div class="bloc-titre">Code couleur automatique (colonne D)</div>
                     <div class="item"><span class="badge vert">🟢 Vert</span><span class="col-desc">Moins de 2 mois — tout va bien</span></div>
                     <div class="item"><span class="badge orange">🟠 Orange</span><span class="col-desc">Entre 2 et 3 mois — à surveiller</span></div>
-                    <div class="item"><span class="badge rouge">🔴 Rouge</span><span class="col-desc">Plus de 3 mois — à relancer, ou non, selon votre jugement et les préférences du DA</span></div>
+                    <div class="item"><span class="badge rouge">🔴 Rouge</span><span class="col-desc">Plus de 3 mois — à relancer selon votre jugement</span></div>
                 </div>
                 <div class="bloc">
                     <div class="bloc-titre">⚠️ Bon usage — à lire avant tout</div>
@@ -360,12 +350,12 @@
                 <p>La base de tout le fichier. Gérez ici vos listes déroulantes de référence.</p>
                 <div class="bloc">
                     <div class="bloc-titre">Colonnes VERTES uniquement à remplir</div>
-                    <div class="item"><span class="col-label vert">A</span><span class="col-desc">3 premières colonnes : Bloc DA ou Réals — format NOM Prénom (ex: LEBLANC Juste) ⚠️ sans espace après le prénom. Col B : double cliquez pour saisir la date de suivi, Col C : à cocher si ce DA n'exerce plus ou si vous ne travaillez plus avec lui. ⚠️ ET ATTENTION : Si vous voulez retirer un DA, sélectionner la ligne avec les 3 colonnes A, B et C ensembles, pour ensuite suprrimer (touche Suppr), car la colonne A se trie automatiquement, mais les autres se décaleraient. Si jamais cela arrive, utiliser la flèche gauche de Undo/span></div>
+                    <div class="item"><span class="col-label vert">A</span><span class="col-desc">3 premières colonnes : Bloc DA ou Réals — format NOM Prénom (ex: LEBLANC Juste) ⚠️ sans espace après le prénom. Col B : double-cliquez pour saisir la date de suivi. Col C : à cocher si ce DA n'exerce plus. ⚠️ <b>ATTENTION :</b> Si vous voulez retirer un DA, sélectionnez la ligne avec les 3 colonnes A, B et C ensemble, puis supprimez (touche Suppr), car la colonne A se trie automatiquement. Si jamais cela arrive, utilisez Ctrl+Z (Annuler).</span></div>
                     <div class="item"><span class="col-label vert">E</span><span class="col-desc">Les studios et sociétés de production</span></div>
                     <div class="item"><span class="col-label vert">H</span><span class="col-desc">Les séries et titres récurrents</span></div>
                 </div>
                 <div class="alert orange">⚠️ Ajoutez toujours en bas de liste, sans laisser de ligne vide.</div>
-                <div class="alert bleu">La zone <b>Profil</b> (colonne B en haut) contient votre nom, année de départ et annexe. En B3, l'année de départ est 2026 par défaut. 💭 Si vos premiers contrats saisis démarrent en 2019 par exemple, modifiez l'année en B3 et saisissez 2019</div>
+                <div class="alert bleu">La zone <b>Profil</b> (colonne B en haut) contient votre nom, année de départ et annexe. En B3, l'année de départ est 2026 par défaut. 💭 Si vos premiers contrats saisis démarrent en 2019 par exemple, modifiez l'année en B3 et saisissez 2019.</div>
             </div>
 
             <!-- 7. ARE -->
@@ -382,7 +372,7 @@
                     <div class="item"><span class="col-label vert">B21</span><span class="col-desc">Prime de licenciement au-delà du légal — très rare en doublage, laisser vide si rien reçu.</span></div>
                     <div class="item"><span class="col-label vert">B33</span><span class="col-desc">AJ nette connue (optionnel) — depuis votre notification d'admission France Travail.</span></div>
                 </div>
-                <div class="alert vert">📌 PRATIQUE : à droite, un petit tableau est proposé pour faciliter la vue sur vos contrats lors de votre déclaration mensuelle. (Vous avez juste à sélectionner le mois de votre déclaration en H3 😉)</div>
+                <div class="alert vert">📌 PRATIQUE : à droite, un petit tableau est proposé pour faciliter la vue sur vos contrats lors de votre déclaration mensuelle. (Sélectionnez le mois en H3 😉)</div>
                 <div class="alert bleu">ℹ️ Le SR est calculé sur les salaires bruts uniquement, hors droits de diffusion — conformément au calcul France Travail.</div>
             </div>
 
@@ -394,7 +384,7 @@
                 <div class="alert bleu">🔒 <b>Rien à saisir dans cet onglet</b> — 100% automatique.</div>
                 <div class="bloc">
                     <div class="bloc-titre">Ce que vous y trouverez</div>
-                    <div class="item"><span class="col-label">📅</span><span class="col-desc">Salaires par année depuis votre début (💡 dans 📈 DONNÉES, en B3, 2026 par défaut, pensez à modifier si besoin, en fonction de vos premiers contrats saisis dans 💼 CONTRATS) </span></div>
+                    <div class="item"><span class="col-label">📅</span><span class="col-desc">Salaires par année depuis votre début (pensez à vérifier l'année en B3 dans DONNÉES)</span></div>
                     <div class="item"><span class="col-label">👥</span><span class="col-desc">Vos DA, réals, etc. les plus fréquents</span></div>
                     <div class="item"><span class="col-label">🏢</span><span class="col-desc">Studios / Prods habituels</span></div>
                 </div>
@@ -439,163 +429,40 @@
                 <div class="divider"></div>
                 <p>Retrouvez ci-dessous les ressources de référence, plateformes de paie et outils face à l'IA.</p>
 
-                <!-- AUTRES LIENS UTILES / PROTECTIONS IA -->
                 <div class="bloc" style="background: #fff8e1; border-color: #ffe082;">
                     <div class="bloc-titre" style="color: #b78103;">🤖 AUTRES LIENS UTILES / PROTECTIONS IA</div>
                     <div class="item">
                         <span class="col-label orange">🔗</span>
                         <span class="col-desc">
-                            <a href="https://destresorsdevoix.fr/" target="_blank" rel="noopener noreferrer"><b>Des Trésors de voix</b></a>
+                            <a href="https://destresorsdevoix.fr/" target="_blank" rel="noopener noreferrer"><b>Des Trésors de voix</b></a> — Collectif de défense des comédiens de doublage.
                         </span>
                     </div>
-                    <div class="item">
-                        <span class="col-label orange">🔗</span>
-                        <span class="col-desc">
-                            <a href="https://lacavernedesdemos.cinecomediens.com/" target="_blank" rel="noopener noreferrer"><b>La caverne des démos</b></a>
-                        </span>
-                    </div>
-                    <div class="item">
-                        <span class="col-label orange">📄</span>
-                        <span class="col-desc">
-                            <a href="https://docs.google.com/document/d/1rCYFxplxhkOnCcZ5i2y7YBYGoWzgQmD7mEtggllM4zI/edit?tab=t.0" target="_blank" rel="noopener noreferrer"><b>Tableau Comparatif Clauses JV</b></a>
-                        </span>
-                    </div>
-                    <div class="item">
-                        <span class="col-label orange">📜</span>
-                        <span class="col-desc">
-                            <a href="https://drive.google.com/file/d/1bOO-gZET_Rvtiw-hnB87sL4L_PmsCoDh/view?usp=drive_link" target="_blank" rel="noopener noreferrer"><b>Clause IA Jeux Vidéos Intersyndicale / Les Voix</b></a>
-                        </span>
-                    </div>
-                    <div class="item">
-                        <span class="col-label orange">🎯</span>
-                        <span class="col-desc">
-                            <a href="https://rslmedia.org/" target="_blank" rel="noopener noreferrer"><b>https://rslmedia.org/</b></a> ➡️ Non consentement IA 🎯
-                        </span>
-                    </div>
-                    <div class="item">
-                        <span class="col-label orange">✉️</span>
-                        <span class="col-desc">
-                            <a href="mailto:tpmvfsurdiscord@gmail.com?subject=discord&body=Bonjour,%0D%0Aj'aimerais%20m'inscrire%20sur%20le%20discord%20tpmvf.%0D%0AMerci%20de%20me%20donner%20les%20indications." target="_blank" rel="noopener noreferrer"><b>Envoyer le mail d'inscription</b></a> ➡️ <i>Pour le Serveur Discord TouchePasMaVF</i>
-                        </span>
-                    </div>
-                    <div class="item">
-                        <span class="col-label orange">🛡️</span>
-                        <span class="col-desc">
-                            <a href="https://drive.google.com/file/d/1oaPRDDXnyqcOCGZWg7W7dKd36IpG5I14/view?usp=drive_link" target="_blank" rel="noopener noreferrer"><b>Doublage et DAD-r face à l'IA</b></a> &nbsp;|&nbsp; 
-                            <a href="https://drive.google.com/file/d/1xFpdgj8KA8JDRBYQ1OEq98g2bHG67A7i/view?usp=sharing" target="_blank" rel="noopener noreferrer"><b>Le B.A. BA de l'IA</b> (selon l'Adami)</a>
-                        </span>
-                    </div>
-                    <div class="item">
-                        <span class="col-label orange">📁</span>
-                        <span class="col-desc">
-                            <a href="https://docs.google.com/spreadsheets/d/1Y7EuzafchjtkpXqHzDVfilGI4g1RdSLI/edit?usp=sharing&ouid=112250988956496180386&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer"><b>Fichier AGIR face à l'IA ressources</b></a>
-                        </span>
-                    </div>
-                    <div class="item">
-                        <span class="col-label orange">👥</span>
-                        <span class="col-desc">
-                            <a href="https://www.instagram.com/ih.lecollectif/" target="_blank" rel="noopener noreferrer"><b>Collectif IH</b></a>
-                        </span>
-                    </div>
-                </div>
-
-                <!-- FRAIS RÉELS — SOURCES & RÉFÉRENCES -->
-                <div class="bloc" style="background: #e0f7fa; border-color: #b2ebf2;">
-                    <div class="bloc-titre" style="color: #00838f;">📂 FRAIS RÉELS — Sources &amp; références</div>
-                    <div class="item">
-                        <span class="col-desc"><b>BOFIP (frais professionnels)</b></span>
-                        <a href="https://bofip.impots.gouv.fr" target="_blank" rel="noopener noreferrer">bofip.impots.gouv.fr</a>
-                    </div>
-                    <div class="item">
-                        <span class="col-desc"><b>Barème kilométrique</b></span>
-                        <a href="https://www.impots.gouv.fr" target="_blank" rel="noopener noreferrer">impots.gouv.fr</a>
-                    </div>
-                    <div class="item">
-                        <span class="col-desc"><b>Forfait repas — Urssaf</b></span>
-                        <a href="https://www.urssaf.fr" target="_blank" rel="noopener noreferrer">urssaf.fr</a>
-                    </div>
-                    <div class="item">
-                        <span class="col-desc"><b>SFA-CGT</b></span>
-                        <a href="https://sfa-cgt.fr" target="_blank" rel="noopener noreferrer">sfa-cgt.fr</a>
-                    </div>
-                    <div class="item">
-                        <span class="col-desc"><b>SNAM-CGT</b></span>
-                        <a href="https://snam-cgt.org" target="_blank" rel="noopener noreferrer">snam-cgt.org</a>
-                    </div>
-                </div>
-
-                <!-- PLATEFORMES DE PAIE -->
-                <div class="bloc">
-                    <div class="bloc-titre">🔑 Plateformes de paie</div>
-                    <div class="item"><span class="col-label">🔑</span><span class="col-desc"><b>Coffre Xotis</b> — Dubbing Brothers, Imagine...</span></div>
-                    <div class="item"><span class="col-label">🔑</span><span class="col-desc"><b>Movinmotion</b> — Eva France, Keywords, Lysi Media...</span></div>
-                    <div class="item"><span class="col-label">🔑</span><span class="col-desc"><b>Transat</b> — Audi'art, Chinkel, Cinékita, Deluxe...</span></div>
-                    <div class="item"><span class="col-label">🔑</span><span class="col-desc"><b>Coffreo</b> — Nice Fellow</span></div>
-                    <div class="item"><span class="col-label">🔑</span><span class="col-desc"><b>YouDub</b> — Transperfect Media France</span></div>
-                </div>
-
-                <!-- RESSOURCES UTILES -->
-                <div class="bloc">
-                    <div class="bloc-titre">Ressources utiles</div>
-                    <div class="item"><span class="col-label">🔗</span><span class="col-desc"><a href="https://www.rsdoublage.com/" target="_blank" rel="noopener noreferrer"><b>RSdoublage</b></a></span></div>
-                    <div class="item"><span class="col-label">🔗</span><span class="col-desc"><a href="https://lesvoix.fr/" target="_blank" rel="noopener noreferrer"><b>lesvoix.fr</b></a></span></div>
                 </div>
             </div>
 
-            <!-- 12. CONSEILS EXCEL -->
+            <!-- VERSION EXCEL -->
             <div class="tab-content" id="excel">
-                <h3>⊞ Contrathèque — Version Excel</h3>
+                <h3>⊞ Conseils Excel</h3>
                 <div class="divider"></div>
-                <p>La version Excel de Contrathèque fonctionne avec <b>Excel 365</b> (Windows). Elle nécessite quelques étapes spécifiques au premier démarrage.</p>
-
-                <div class="bloc">
-                    <div class="bloc-titre">⚠️ Premier démarrage — Activer les macros</div>
-                    <div class="item"><span class="col-label orange">1</span><span class="col-desc">À l'ouverture du fichier <b>.xlsm</b>, Excel affiche une <b>barre jaune</b> en haut de l'écran.</span></div>
-                    <div class="item"><span class="col-label orange">2</span><span class="col-desc">Cliquez sur <b>"Activer le contenu"</b> — cette étape est indispensable.</span></div>
-                    <div class="item"><span class="col-label orange">3</span><span class="col-desc">Sans cette action, le calendrier de saisie de dates <b>ne fonctionnera pas</b>.</span></div>
-                    <div class="item"><span class="col-label vert">✓</span><span class="col-desc">Cette action n'est à faire <b>qu'une seule fois</b> par ordinateur.</span></div>
-                </div>
-
-                <div class="bloc">
-                    <div class="bloc-titre">🗓 Saisie des dates — Calendrier intégré</div>
-                    <div class="item"><span class="col-label vert">A</span><span class="col-desc"><b>CONTRATS colonne A</b> — double-cliquez pour saisir la date du contrat</span></div>
-                    <div class="item"><span class="col-label vert">AG</span><span class="col-desc"><b>CONTRATS colonne AG</b> — double-cliquez pour saisir la date de paiement</span></div>
-                    <div class="item"><span class="col-label vert">E</span><span class="col-desc"><b>SUIVI DA colonne E</b> — double-cliquez pour saisir la date de dernier contact avec le DA</span></div>
-                    <div class="alert bleu">💡 Une boîte de dialogue s'ouvre avec la date du jour pré-remplie. Modifiez-la si besoin au format jj/mm/aaaa.</div>
-                </div>
-
-                <div class="bloc">
-                    <div class="bloc-titre">⚙️ Différences avec la version Google Sheets</div>
-                    <div class="item"><span class="col-label">📋</span><span class="col-desc">Pas de menu "Bienvenue" — les fonctions automatiques sont gérées par le VBA intégré.</span></div>
-                    <div class="item"><span class="col-label">📋</span><span class="col-desc">Pour coller des valeurs : utilisez <b>Ctrl+Alt+V → Valeurs</b> au lieu de Ctrl+Shift+V.</span></div>
-                    <div class="item"><span class="col-label">📋</span><span class="col-desc">Le fichier doit rester au format <b>.xlsm</b> pour conserver les macros.</span></div>
-                    <div class="item"><span class="col-label">📋</span><span class="col-desc">Nécessite <b>Excel 365</b> — les fonctions FILTRE, UNIQUE et SEQUENCE ne sont pas disponibles dans les versions antérieures.</span></div>
-                </div>
-
-                <div class="bloc">
-                    <div class="bloc-titre">✅ Bonnes pratiques spécifiques Excel</div>
-                    <div class="item"><span class="col-label vert">✓</span><span class="col-desc">Ne jamais enregistrer en <b>.xlsx</b> — vous perdriez les macros VBA (calendrier, stockage des dates DA).</span></div>
-                    <div class="item"><span class="col-label vert">✓</span><span class="col-desc">Si Excel propose de "réparer" le fichier à l'ouverture, acceptez — certaines fonctions dynamiques sont signalées comme inconnues mais fonctionnent correctement.</span></div>
-                    <div class="item"><span class="col-label vert">✓</span><span class="col-desc">Ne jamais supprimer de colonnes ou de lignes — masquez-les si vous voulez les cacher.</span></div>
-                    <div class="item"><span class="col-label vert">✓</span><span class="col-desc">Faites une sauvegarde mensuelle du fichier.</span></div>
-                    <div class="item"><span class="col-label vert">✓</span><span class="col-desc">Le mot de passe pour ôter et remettre les protections des feuilles est : touchepasmavf</span></div>
-                </div>
-
-                <div class="alert orange">⚠️ La version Excel est distribuée en <b>.xlsm</b> (classeur avec macros). Si votre entreprise ou antivirus bloque les macros, contactez votre administrateur système.</div>
+                <p>Si vous utilisez Contrathèque sous Microsoft Excel au lieu de Google Sheets :</p>
+                <div class="alert bleu">Les macros doivent être activées à l'ouverture du fichier pour bénéficier des fonctions automatisées.</div>
             </div>
 
         </div>
     </div>
 </div>
+
 <script>
-    const tabs = document.querySelectorAll('.tab-btn');
-    const contents = document.querySelectorAll('.tab-content');
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            tabs.forEach(t => t.classList.remove('active'));
-            contents.forEach(c => c.classList.remove('active'));
-            tab.classList.add('active');
-            document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
+    document.querySelectorAll('.tab-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const tabId = button.getAttribute('data-tab');
+            
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            
+            button.classList.add('active');
+            const targetContent = document.getElementById(tabId);
+            if (targetContent) targetContent.classList.add('active');
         });
     });
 </script>
