@@ -379,12 +379,15 @@
             <div class="tab-content" id="are">
                 <h3>💰 L'onglet ARE</h3>
                 <div class="divider"></div>
-                <p>Simulation de vos allocations chômage (annexe 8 ou 10).</p>
+                <p>Simulation de vos allocations chômage (annexe 10).</p>
                 <div class="alert orange">📌 <b>Franchise CP :</b> les jours de "franchise congés payés" appliqués par France Travail ne sont pas pris en compte dans le calcul — l'estimation mensuelle peut donc différer du calcul officiel. Mais en général, l'estimation est juste au centime près 🎯</div>
                 <div class="bloc">
                     <div class="bloc-titre">Cellules saisissables</div>
                     <div class="item"><span class="col-label vert">B5</span><span class="col-desc">Mois à simuler — saisir le 1er jour du mois (ex: 01/07/2026)</span></div>
-                    <div class="item"><span class="col-label vert">B13</span><span class="col-desc"><b>FCT manuelle = votre date anniversaire</b> — point de départ des 12 mois</span></div>
+                    <div class="item"><span class="col-label vert">B12</span><span class="col-desc"><b>Mode d'analyse :</b><br>
+                        • <b>Mode "Période en cours (automatique)" :</b> Se cale dynamiquement sur le dernier contrat enregistré pour calculer les 12 derniers mois glissants. Idéal pour calculer votre allocation mensuelle en temps réel sur le mois en B5.<br>
+                        • <b>Mode "Date spécifique (simulation)" :</b> Fige le calcul sur les 12 mois précédant la date anniversaire (FCT) saisie en B13. Idéal pour simuler vos prochains droits et comparer vos allocations avec une notification officielle.</span></div>
+                    <div class="item"><span class="col-label vert">B13</span><span class="col-desc"><b>FCT manuelle = votre date anniversaire</b> — point de départ des 12 mois (utilisé en mode simulation)</span></div>
                     <div class="item"><span class="col-label vert">B20</span><span class="col-desc">ICCP — relevé annuel Congés Spectacles. N'impacte que le 1er mois d'indemnisation.</span></div>
                     <div class="item"><span class="col-label vert">B21</span><span class="col-desc">Prime de licenciement au-delà du légal — très rare en doublage, laisser vide si rien reçu.</span></div>
                     <div class="item"><span class="col-label vert">B33</span><span class="col-desc">AJ nette connue (optionnel) — depuis votre notification d'admission France Travail.</span></div>
