@@ -240,13 +240,13 @@
                     <div class="bloc-titre">Démarrage</div>
                     <div class="item"><span class="col-label orange">🎯</span><span class="col-desc"><b>Ajoutez vos DA dans 📈 DONNÉES (onglet vert)</b>, colonne A (en vert). Saisissez vos DA au format NOM Prénom (par exemple : "LEBLANC Juste" sans laisser d'espace après le prénom). Sans ça, la liste déroulante dans 💼 CONTRATS sera vide. Même chose pour les studios / prods, et les titres de séries ou autres (colonnes E &amp; H)</span></div>
                     <div class="item"><span class="col-label orange">👤</span><span class="col-desc"><b>Renseignez votre profil</b> — Toujours dans 📈 DONNÉES, remplissez la zone profil : votre nom, votre année de départ dans le fichier, et votre annexe (8 ou 10). Ces informations alimentent les statistiques et le calcul ARE.</span></div>
-                    <div class="item"><span class="col-label orange">💯</span><span class="col-desc"><b>Saisissez votre premier contrat</b> — Une ligne par contrat, ne pas sauter de ligne, et ne remplir <b>que les cases vertes</b>, les autres se calculent toutes seules</span></div>
+                    <div class="item"><span class="col-label orange">👍</span><span class="col-desc"><b>Saisissez votre premier contrat</b> — Une ligne par contrat, ne pas sauter de ligne, et ne remplir <b>que les cases vertes</b>, les autres se calculent toutes seules</span></div>
                 </div>
                 <div class="bloc">
                     <div class="bloc-titre">⚠️ Règles essentielles</div>
                     <div class="item"><span class="col-label orange">🚫</span><span class="col-desc"><b>Ne jamais supprimer de colonnes ou de lignes</b> — masquez-les si vous voulez les cacher. Les calculs fonctionnent même sur les lignes et colonnes masquées.</span></div>
-                    <div class="item"><span class="col-label orange">🚫</span><span class="col-desc"><b>Ne pas renommer les onglets</b> — les formules et le script en dépendent.</span></div>
-                    <div class="item"><span class="col-label orange">🚫</span><span class="col-desc"><b>Ne jamais coller avec Ctrl+V</b> — utilisez toujours <b>Ctrl+Shift+V</b> (valeurs uniquement) pour éviter d'écraser les formules.</span></div>
+                    <div class="item"><span class="col-label orange">❌</span><span class="col-desc"><b>Ne pas renommer les onglets</b> — les formules et le script en dépendent.</span></div>
+                    <div class="item"><span class="col-label orange">⛔</span><span class="col-desc"><b>Ne jamais coller avec Ctrl+V</b> — utilisez toujours <b>Ctrl+Shift+V</b> (valeurs uniquement) pour éviter d'écraser les formules.</span></div>
                 </div>
                 <div class="bloc">
                     <div class="bloc-titre">🧭 Navigation</div>
@@ -279,7 +279,7 @@
             <div class="tab-content" id="contrats">
                 <h3>💼 L'onglet CONTRATS</h3>
                 <div class="divider"></div>
-                <p>C'est ici que vous saisissez tous vos contrats. <b>Une ligne = un contrat.</b></p>
+                <p>C'est le coeur du fichier, une zone de saisie avec les détails de tous vos contrats et qui alimentera tous les autres onglets (Essentiel, ARE, Tableau de bord, etc).<b>Une ligne = un contrat.</b></p>
                 <p>💡 Aidez-vous des listes déroulantes signalées par un petit triangle vers le bas.</p>
                 <div class="bloc">
                     <div class="bloc-titre">Cases vertes — à remplir</div>
@@ -309,7 +309,7 @@
                 <p>Vue 100% automatique de votre relation avec chaque DA. Tout se remplit depuis l'onglet DONNEES et CONTRATS. Rien à saisir 👍</p>
                 <div class="bloc">
                     <div class="item"><span class="col-label vert">E</span><span class="col-desc">Date à laquelle vous avez croisé ce DA (dernier contact).</span></div>
-                    <div class="item"><span class="col-label">F</span><span class="col-desc">Case à cocher ✓ — DA plus en activité ou plus suivi (exclu des DA à relancer)</span></div>
+                    <div class="item"><span class="col-label">F</span><span class="col-desc">Case à cocher ✓ — DA qui n'est plus en activité ou n'est plus suivi (cela filtre les DA à relancer)</span></div>
                 </div>
                 <div class="bloc">
                     <div class="bloc-titre">Code couleur automatique (colonne D et E)</div>
@@ -332,7 +332,7 @@
             <div class="tab-content" id="recherche">
                 <h3>🔍 L'onglet RECHERCHE</h3>
                 <div class="divider"></div>
-                <p>Parmi tous vos contrats, retrouvez n'importe lequel en quelques secondes. 🎯 Grâce à un ou plusieurs de ces différents critères de filtres, combinés ou non, ligne 3 (par Domaine, année, mois, etc.) En faisant une recherche domaine : 'studio' et en indiquantle studio recherché, vous obtenez tous les contrats réalisés avec ce studio, ainsi que la plateforme de téléchargement des paies correspondante</p>
+                <p>Parmi tous vos contrats, retrouvez n'importe lequel en quelques secondes. 🎯 Grâce à la ligne 3, avec un ou plusieurs de ces différents critères de filtres, combinés ou non (par Domaine, année, mois, etc.). Par ex, en faisant une recherche domaine : 'studio' et en indiquantle studio recherché, vous obtenez tous les contrats réalisés avec ce studio, ainsi que la plateforme de téléchargement des paies correspondante</p>
                 <div class="bloc">
                     <div class="bloc-titre">Zone de saisie — ligne 3</div>
                     <div class="item"><span class="col-label">A3</span><span class="col-desc">Choisissez le critère (DA, Studio, Titre, Genre...)</span></div>
@@ -341,7 +341,7 @@
                     <div class="item"><span class="col-label">E3</span><span class="col-desc">Année (optionnel)</span></div>
                     <div class="item"><span class="col-label">F3</span><span class="col-desc">Payé ? OUI / NON / TOUS (optionnel aussi)</span></div>
                 </div>
-                <div class="alert bleu">La cellule <b>J3</b> (fond rosé) affiche le total des montants non encore perçus sur les résultats filtrés.</div>
+                <div class="alert bleu">👍 La cellule <b>I3</b> (fond rosé) affiche le total des montants non encore perçus sur les résultats filtrés, tandis qu'en K3, avec une recherche par studio vous aurez la plateforme de téléchargement des paies correspondante.</div>
             </div>
 
 <!-- 6. DONNÉES -->
@@ -368,8 +368,8 @@
                 </div>
 
                 <div class="alert orange">
-                    <b>⚠️ RÈGLE D'OR — POUR SUPPRIMER UN DA :</b><br>
-                    Sélectionnez <b>impérativement les 3 cellules A, B et C de la ligne ensemble</b> puis appuyez sur la touche <b>Suppr</b> Puis, ré-insère les cases à cocher qui auront "sauté".<br>
+                    <b>⚠️ RÈGLE D'OR — POUR SUPPRIMER UNE ligne de DA proprement :</b><br>
+                    Sélectionnez <b>impérativement les 3 cellules A, B et C de la ligne concernée,</b> puis clic droit / supprimer des cellules / supprimer en décalant vers le haut.<br>
                     <i>Pourquoi ?</i> Comme la colonne A se trie seule, si vous n'effacez que le nom, la date devient « orpheline » et est envoyée tout en bas, ce qui décale la concordance entre les dates et les noms ! En cas d'erreur, faites immédiatement <b>Ctrl+Z</b> (Annuler). SI entre temps, une case à cocher a "sauté", il faudra la réinsérer (insertion dans le menu, et case à cocher)
                 </div>
 
